@@ -1,4 +1,8 @@
 Hey there! 👋
-I'm basically running life in debug mode – always curious, constantly learning, and obsessed with turning every experience into an opportunity for a personal upgrade. This blog is my personal knowledge repository, where I dump insights from my AI learnings, product design, problem-solving, and the interesting books I have read.
 
-This is my sandbox for trying out ideas, connecting dots, and reflecting on what I learn along the way.  Some entries might be messy, some might be elegant, but they're all real-time snapshots of an ongoing experiment: me, learning and growing. 
+I'm Sumi – a curious person, with a love for reading and turning every experience into an opportunity for a personal upgrade. 
+
+This blog is my personal knowledge vault—a space where I document insights on AI, design, and books, along with my adventures in product management and creative problem-solving.
+
+Think of it as my sandbox for exploring ideas, making connections, and reflecting on the learning process. 
+Some posts might be a bit messy, others more refined, but every entry captures a real-time snapshot of my journey: continuously learning, experimenting, and growing. 
