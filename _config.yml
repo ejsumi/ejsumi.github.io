@@ -1,7 +1,7 @@
 title: "Sumi Elizabeth Joseph"
 description: "AI & Product Leadership Portfolio"
 url: "https://ejsumi.github.io"
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 
 # Plugins for GitHub Pages
 plugins:
