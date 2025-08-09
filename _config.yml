@@ -13,7 +13,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-remote-theme
-
+  - jekyll-include-cache
+  
 # Minimal Mistakes skin
 minimal_mistakes_skin: "default"
 
