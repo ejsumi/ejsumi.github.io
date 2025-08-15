@@ -2,9 +2,9 @@ main:
   - title: "Home"
     url: /
   - title: "Projects"
-    url: /projects/
+    url: /categories/projects/
   - title: "Learnings"
-    url: /learnings/
+    url: /categories/learnings/
   - title: "About"
     url: /about/
   - title: "Contact"

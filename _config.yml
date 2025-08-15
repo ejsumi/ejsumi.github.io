@@ -4,47 +4,28 @@ url: "https://ejsumi.github.io"
 remote_theme: "mmistakes/minimal-mistakes"
 
 # Pagination
-paginate: 5
+paginate: 10
 paginate_path: "/page:num/"
+timezone: Asia/Kolkata
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-archives
+  - jekyll-sitemap
   - jekyll-remote-theme
   - jekyll-include-cache
   
 # Minimal Mistakes skin
 minimal_mistakes_skin: "default"
 
-# Author profile
-author:
-  name: "Sumi Elizabeth Joseph"
-  avatar: "/assets/images/avatar.jpg"
-  bio: "AI & Product Leader | Knowledge & Content Management | GenAI Solutions"
-  location: "Bangalore, India"
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/sumi-elizabeth-joseph/"
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/ejsumi"
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:sumiej12@gmail.com"
 
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-  learnings:
-    output: true
-    permalink: /learnings/:path/
+category_archive:
+  type: liquid
+  path: /categories/
 
-# Defaults
 defaults:
   - scope:
       path: ""
@@ -52,15 +33,19 @@ defaults:
     values:
       layout: single
       author_profile: true
+      read_time: true
+      comments: false
+      share: true
   - scope:
       path: ""
-      type: projects
+      type: pages
     values:
       layout: single
       author_profile: true
-  - scope:
-      path: ""
-      type: learnings
-    values:
-      layout: single
-      author_profile: true
+
+include:
+  - _pages
+
+collections:
+  pages:
+    output: true
