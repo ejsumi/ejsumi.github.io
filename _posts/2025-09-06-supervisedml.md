@@ -1,6 +1,9 @@
-# Supervised Learning Quick Reference Sheet
+---
+title: "Supervised Machine Learning: A Quick Reference"
+categories: [learnings]
+tags: [python, machine learning]
+---
 
-## Overview of Supervised Learning
 
 Supervised learning is a machine learning approach where models learn from labeled training data to make predictions on new, unseen data. The algorithm learns the relationship between input features (X) and target variables (y) to generalize patterns.
 
