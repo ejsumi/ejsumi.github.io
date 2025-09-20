@@ -45,7 +45,7 @@ Actual  Pos   TP    FN
 | **Recall (Sensitivity)** | TP / (TP + FN) | 0 to 1 | Of all actual positives, how many were correctly identified | When false negatives are costly (e.g., medical diagnosis) |
 | **F1-Score** | 2 × (Precision × Recall) / (Precision + Recall) | 0 to 1 | Harmonic mean of precision and recall | Balance between precision and recall, imbalanced datasets |
 
-## Which Metric is Important When?
+### Which Metric is Important When?
 
 | Scenario | Primary Metric | Reason |
 |----------|---------------|---------|
@@ -57,51 +57,30 @@ Actual  Pos   TP    FN
 | Imbalanced dataset | **F1-Score** | Balances precision and recall |
 | Cost-sensitive | **Custom metric** | Based on business costs of FP vs FN |
 
-## Top 5 Models for Each Task
+## Top 5 Models
+### 📊 Regression Models  
 
-### Top 5 Regression Models
+| Model                          | Key Strengths                                                                 |
+|--------------------------------|-------------------------------------------------------------------------------|
+| **Linear Regression**          | Simple, interpretable, fast <br> Good baseline model                          |
+| **Random Forest**              | Handles non-linearity, reduces overfitting <br> Good for mixed data types     |
+| **Gradient Boosting (XGBoost/LightGBM)** | High accuracy, handles complex patterns <br> Popular in competitions |
+| **Support Vector Regression (SVR)** | Effective for high-dimensional data <br> Good with kernel tricks        |
+| **Neural Networks**            | Captures complex non-linear relationships <br> Good for large datasets        |
 
-1. **Linear Regression**
-   - Simple, interpretable, fast
-   - Good baseline model
+---
 
-2. **Random Forest**
-   - Handles non-linearity, reduces overfitting
-   - Good for mixed data types
+### 📊 Top 5 Classification Models  
 
-3. **Gradient Boosting (XGBoost/LightGBM)**
-   - High accuracy, handles complex patterns
-   - Popular in competitions
+| Model                          | Key Strengths                                                                 |
+|--------------------------------|-------------------------------------------------------------------------------|
+| **Logistic Regression**        | Simple, interpretable, probabilistic output <br> Good baseline for binary classification |
+| **Random Forest**              | Robust, handles mixed data types <br> Provides feature importance             |
+| **Gradient Boosting (XGBoost/LightGBM)** | High performance, handles imbalanced data <br> Feature selection capabilities |
+| **Support Vector Machine (SVM)** | Effective for high-dimensional data <br> Good generalization with proper tuning |
+| **Neural Networks**            | Powerful for complex patterns <br> Excellent for image/text data              |
 
-4. **Support Vector Regression (SVR)**
-   - Effective for high-dimensional data
-   - Good with kernel tricks
 
-5. **Neural Networks**
-   - Captures complex non-linear relationships
-   - Good for large datasets
-
-### Top 5 Classification Models
-
-1. **Logistic Regression**
-   - Simple, interpretable, probabilistic output
-   - Good baseline for binary classification
-
-2. **Random Forest**
-   - Robust, handles mixed data types
-   - Provides feature importance
-
-3. **Gradient Boosting (XGBoost/LightGBM)**
-   - High performance, handles imbalanced data
-   - Feature selection capabilities
-
-4. **Support Vector Machine (SVM)**
-   - Effective for high-dimensional data
-   - Good generalization with proper tuning
-
-5. **Neural Networks**
-   - Powerful for complex patterns
-   - Excellent for image/text data
 
 ## Model Selection Guide
 
