@@ -4,7 +4,7 @@ categories: [projects]
 tags: [Gen AI, AI Tools, Technical Writing]
 ---
 
-A few months ago, I shared my experience with [Msty as an AI aggregator](https://ejsumi.github.io/projects/2025/08/08/msty.html) for personal productivity. Today, I want to talk about how I've integrated Enterprise Copilot into my daily work as a technical writer.
+A few months ago, I shared my experience with [Msty as an AI aggregator](https://ejsumi.github.io/projects/2025/08/08/msty.html) for personal productivity. Today, I want to talk about how I've integrated Enterprise Copilot into my daily work managing the technical writers team.
 
 Here's the thing - documentation work involves a lot of back-and-forth. You get requirements documents, user stories, sometimes just scattered emails. Your job is turning all that into clear user guides and release notes. It takes time, multiple drafts, and constant clarifications because input documents are rarely complete.
 
@@ -12,7 +12,7 @@ Enterprise Copilot changed how I approach this. Not dramatically, not magically 
 
 **From Blank Pages to First Drafts**
 
-Before Copilot, creating even a first draft took considerable time. New features or technical terms would show up without context, and I'd spend hours figuring out what they meant. The gap in domain understanding meant incomplete documentation and more review cycles.
+Before Copilot, creating even a first draft took considerable time. New features or technical terms would show up without context, and would need to spend hours figuring out what they meant. The gap in domain understanding meant incomplete documentation and more review cycles.
 
 I started experimenting with Copilot cautiously - simple prompts for language review. Generic requests like "improve this text" gave mediocre results. But when I got specific - "Review this paragraph for passive voice" or "Check if this matches our conversational tone" - the output improved dramatically.
 
@@ -20,7 +20,7 @@ That's when it clicked: Copilot isn't a magic wand. It's a tool that needs clear
 
 **How I Actually Use It**
 
-When new products get added to our portfolio, I create prompt templates customized for each one. This helps junior team members generate drafts faster without starting from scratch.
+When new features/products get added to our portfolio, I create prompt templates customized for each one. This helps junior team members generate drafts faster without starting from scratch.
 
 For example: "Based on this SRS document, explain the core user workflow for [Product Name] in simple terms. List any assumptions you're making."
 
@@ -30,7 +30,7 @@ For style consistency, I use specific prompts: "Review this section for conversa
 
 **Finding What's Missing**
 
-One trick I love - using different personas to pressure-test documents. I ask Copilot: "Act as a developer implementing this API. What information is missing? What questions would you have?"
+One trick I love - using different personas to test the documents. I ask Copilot: "Act as a developer implementing this API. What information is missing? What questions would you have?"
 
 Or: "Act as a business analyst explaining this feature to stakeholders. What's unclear?"
 
@@ -44,21 +44,21 @@ This surfaces inconsistencies and helps me create accurate abstractions of compl
 
 **Creating Templates Faster**
 
-When we needed a new document template recently, I asked Copilot to draft an outline based on the template's purpose and our existing formats. The initial draft wasn't perfect, but it accelerated iterations with the team significantly. What would have taken multiple meetings happened in one focused session.
+Recently, when we needed a new document template, I asked Copilot to draft an outline based on the template's purpose, our existing formats and standards. The initial draft wasn't perfect, but it accelerated iterations with the product team. What would have taken multiple meetings, happened in 1-2 focused sessions.
 
 **Building Glossaries**
 
-Identifying terms for glossaries used to mean combing through documents manually. Now I upload documentation and ask: "Identify technical terms and acronyms that would need definitions for a non-technical audience."
+Identifying terms for glossaries meant, manually combing through documents. Now I upload documentation and ask: "Identify technical terms and acronyms that would need definitions for a non-technical audience."
 
-It's not always perfect - sometimes it flags common terms or misses domain-specific jargon - but it gives me a solid starting list to refine.
+It's not always perfect - sometimes it flags common terms or misses domain-specific jargon - but it gives a solid starting list to refine.
 
 **The Reality Check**
 
 Let me be clear: Enterprise Copilot isn't a silver bullet.
 
-Generic prompts don't work. Different products have different input documents and formats. A prompt that works beautifully for one product might produce garbage for another. I've had to fine-tune prompts for each scenario and teach my junior team members how to customize them for specific tasks.
+Generic prompts don't work. Different products have different input documents and formats. A prompt that works beautifully for one product may produce less desirable output for another. I've had to fine-tune prompts for each scenario and teach my junior team members how to customize them for specific tasks.
 
-Guided adoption is critical. Initially, I just told the team, "We have Copilot now, use it." Adoption was slow. When I started showing them exactly how to use it for their daily tasks - "Here's how you generate a first draft of release notes from user stories" - adoption improved dramatically. When guided for their daily tasks, people actually use it.
+Guided adoption is critical. Initially, I just told the team, "We have Copilot now, use it." Adoption was slow. When I started showing them exactly how to use it for their daily tasks - "Here's how you generate a first draft of user guide from user stories" - adoption improved dramatically. When guided for their daily tasks, people actually use it.
 
 Always keep a human in the loop. I treat Copilot as a partner or thought assistant, not a replacement for critical thinking. Every output needs review. Every draft needs validation against source documents. AI accelerates the process; it doesn't make you less responsible.
 
@@ -76,7 +76,7 @@ And that work? It's worth it.
 
 **Who Should Try This?**
 
-If you're working in technical documentation and your organization has Enterprise Copilot (or similar tools), experiment with it hands-on. Start small with language review, then expand to drafting, then to gap analysis.
+If you are a knowledge worker and your organization has Enterprise Copilot (or similar tools), experiment with it hands-on. Start small with language review, then expand to drafting, then to gap analysis.
 
 Better yet, show your junior team members exactly how to use it for their specific tasks. Don't just say "use AI" - demonstrate the actual prompts and workflows that work.
 
