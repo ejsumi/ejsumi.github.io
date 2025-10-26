@@ -73,3 +73,5 @@ predictions = model.predict(X_test)
 
 # 4. Evaluate
 from sklearn.metrics import accuracy_score
+
+```
