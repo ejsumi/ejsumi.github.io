@@ -3,6 +3,7 @@ title: "Machine Learning Algorithms Quick Reference"
 categories: [learnings]
 tags: [python, data analysis]
 ---
+This quick reference guide breaks down the most important ML algorithms across supervised learning, unsupervised learning, ensemble methods, and neural networks—complete with descriptions, use cases, and ready-to-use scikit-learn code snippets. Whether you're building your first model or need a quick lookup for your next project, this guide has you covered.
 
 ## Supervised Learning - Regression
 
