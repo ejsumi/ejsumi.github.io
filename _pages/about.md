@@ -4,13 +4,12 @@ permalink: /about/
 layout: single
 ---
 
-**Hi, I’m Sumi — a Strategic Product & Technology Leader with 18+ years of experience driving AI-powered transformation across enterprise content and knowledge platforms.**
+**Hi, I’m Sumi — a Product and Technology Leader with 19+ years of experience building and scaling enterprise knowledge and enablement platforms, with a growing focus on practical, governed AI adoption.**
 
-I specialize in turning emerging AI tools into scalable, high-impact solutions. At EdgeVerve, I led the cross-functional rollout of *KnowledgeGPT*, a GenAI-powered assistant deployed across 40+ digital banking products — streamlining content delivery, cutting review cycles by 70%, and enhancing user support experiences.
+My work centers on translating emerging AI capabilities into solutions that solve real operational problems at scale. At EdgeVerve, I led cross-functional initiatives to introduce GenAI into enterprise knowledge systems, including the rollout of KnowledgeGPT — a RAG-based assistant supporting 35+ banking products. These initiatives reduced content review effort by up to 70%, improved information discoverability, and enhanced support experiences for global users.
 
-As the owner of our publishing platform and knowledge systems, I combine deep product ownership with hands-on AI prototyping to solve real-world problems. My work bridges engineering, content, and stakeholder teams - ensuring that innovations don’t just get built, but actually get adopted.
+I currently own and evolve knowledge platforms, combining strong product ownership with hands-on experimentation in AI, automation, and analytics. I work closely with engineering, AI teams, content specialists, and business stakeholders to ensure solutions are not only technically sound but also usable, compliant, and widely adopted.
 
-Whether it’s driving prompt-based tools to boost writer productivity or re-architecting search with AI-enhanced metadata, my focus is simple: **make AI practical, scalable, and business-aligned.**
-
+Whether it’s enabling prompt-driven workflows to improve productivity, modernizing search with AI-assisted metadata, or using data to guide platform decisions, my focus remains consistent: making AI practical, scalable, and aligned to real business value.
 
 
