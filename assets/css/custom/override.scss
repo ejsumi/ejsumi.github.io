@@ -1,0 +1,10 @@
+/*
+ Overrides for minimal-mistakes theme variables
+// Reduce the right-side reserved width to 15px so the right whitespace becomes ~15px.
+// Use px for screen layouts — 15px is recommended over 15pt for web.*/
+$right-sidebar-width-narrow: 15px !default;
+$right-sidebar-width: 15px !default;
+$right-sidebar-width-wide: 15px !default;
+
+/* Optional: reduce the container padding if you also want less inner padding
+// $container-padding-inline: 15px !default;
