@@ -4,23 +4,23 @@ categories: [projects]
 tags: [Gen AI, AI Tools, Technical Writing]
 ---
 
-A few months ago, I shared my experience with [Msty as an AI aggregator](https://ejsumi.github.io/projects/2025/08/08/msty.html) for personal productivity. Today, I want to talk about how I've integrated Enterprise Copilot into my daily work managing the technical writers team.
+A few months ago, I shared my experience with [Msty as an AI aggregator](https://ejsumi.github.io/projects/2025/08/08/msty.html) for personal AI projects. Today, I want to talk about how in work we use Enterprise Copilot in the technical writers team.
 
-Here's the thing - documentation work involves a lot of back-and-forth. You get requirements documents, user stories, sometimes just scattered emails. Your job is turning all that into clear user guides and release notes. It takes time, multiple drafts, and constant clarifications because input documents are rarely complete.
+Here's the thing - documentation work involves a lot of back-and-forth. You get requirements documents, user stories, sometimes info in emails. Your job is to comprehend, abstract to clear user guides and release notes. It takes time, multiple drafts, and constant clarifications because information is scattered and not complete.
 
-Enterprise Copilot changed how I approach this. Not dramatically, not magically - just practically.
+In our organization, we have access to Enterprise Copilot and due to data privacy issues, other AI chat tools are not allowed for project work.
 
 **From Blank Pages to First Drafts**
 
-Before Copilot, creating even a first draft took considerable time. New features or technical terms would show up without context, and would need to spend hours figuring out what they meant. The gap in domain understanding meant incomplete documentation and more review cycles.
+Before Copilot, creating the first draft took considerable time. New features or technical terms would show up without context, and would need to spend hours figuring out what they meant. The gap in domain understanding meant incomplete documentation and more review cycles.
 
-I started experimenting with Copilot cautiously - simple prompts for language review. Generic requests like "improve this text" gave mediocre results. But when I got specific - "Review this paragraph for passive voice" or "Check if this matches our conversational tone" - the output improved dramatically.
+I started experimenting with Copilot cautiously - simple prompts for language review. Generic requests like "improve this text" gave mediocre results. But when I got specific - "Review this paragraph for passive voice" or "Check if this matches our conversational tone" - the output improved.
 
 That's when it clicked: Copilot isn't a magic wand. It's a tool that needs clear direction.
 
 **How I Actually Use It**
 
-When new features/products get added to our portfolio, I create prompt templates customized for each one. This helps junior team members generate drafts faster without starting from scratch.
+There are guidelines on how to use the prompts and training is given to the team members. There are also a set of prompt templates created for the various taks in the team. If there are tweaks required for different product, the template is customized as per the requirements. This helps junior team members generate drafts faster without starting from scratch. Also, it ensures that the output is consistent is tone and style.
 
 For example: "Based on this SRS document, explain the core user workflow for [Product Name] in simple terms. List any assumptions you're making."
 
@@ -38,7 +38,7 @@ This helps me spot gaps and create a list of questions for SMEs and product owne
 
 **Working with Multiple Documents**
 
-Enterprise Copilot's ability to work with OneDrive links has been surprisingly useful. Instead of opening five different documents to cross-reference information, I upload links and query: "What are the differences in how authentication is described across these three documents?"
+Enterprise Copilot's ability to work with OneDrive links has been surprisingly useful. Instead of opening five different documents to cross-reference information, I upload links and query: "What are the differences in how authentication is described across these five documents?"
 
 This surfaces inconsistencies and helps me create accurate abstractions of complex requirements.
 
