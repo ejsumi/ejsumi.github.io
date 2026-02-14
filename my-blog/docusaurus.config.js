@@ -58,8 +58,9 @@ const config = {
       ({
         docs: false,
         blog: {
+          routeBasePath: '/',
           showReadingTime: true,
-          
+
           blogTitle: 'Blog',
           blogDescription: 'Thoughts on documentation, platforms, and AI',
           blogSidebarTitle: 'All Posts',
@@ -100,7 +101,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/', label: 'Blog', position: 'left' },
           { to: '/about', label: 'About', position: 'left' },
           {
             href: 'https://www.linkedin.com/in/sumi-elizabeth-joseph/',
@@ -115,7 +116,7 @@ const config = {
           {
             title: 'Explore',
             items: [
-              { label: 'Blog', to: '/blog' },
+              { label: 'Blog', to: '/' },
               { label: 'About', to: '/about' },  
             ],
           },
