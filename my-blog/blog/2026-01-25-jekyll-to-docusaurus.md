@@ -42,16 +42,6 @@ The post showed up. The formatting looked right. That small proof of concept gav
 
 The main frontmatter difference from Jekyll: Docusaurus uses `tags` as an array directly in YAML, and it's stricter about dates matching the filename. I moved the remaining five posts in one go, ran the server again, and everything rendered cleanly.
 
-**Testing Locally Before Pushing**
-
-Before touching GitHub, I ran a production build locally:
-
-```bash
-npm run build
-npm run serve
-```
-
-This catches things the dev server sometimes misses — broken links, missing assets, config issues. One thing I noticed here: `onBrokenLinks: 'throw'` in the config means the build will fail if any internal links are wrong. That's actually a good thing. It caught a stale link pointing to an old Jekyll URL format in one of my posts before it went live.
 
 **Setting Up Deployment**
 
@@ -71,19 +61,18 @@ That was it. The site came up immediately after saving.
 
 Once the content was live, I made a few small adjustments:
 
-- Replaced the default green color scheme with dark blue for light mode and soft light blue for dark mode — one CSS variable change that cascades through titles, tags, and the active nav tab
-- Swapped the Docusaurus logo for an open book icon in the navbar
-- Created a wizard hat SVG as the favicon and removed the default `.ico` file, which was overriding it
+- Replaced the default green color scheme with blue f — one CSS variable change that cascades through titles, tags, and the active nav tab
+- Removed the Docusaurus logo 
 - Added `description` frontmatter to all posts for proper meta descriptions in search results
-- Added a `robots.txt` pointing crawlers to the sitemap
+
 
 Each change was small, but together they made the site feel like mine rather than a starter template.
 
 **Was It Worth It?**
 
-Yes. The Jekyll theme always felt like I was borrowing someone else's house. Docusaurus feels like I built my own — I understand what every file does and where to go when something needs changing.
+Yes. I liked the layout of Docusaurus more and it is node based. 
 
-The migration itself took one focused afternoon. Most of that time was configuration and testing, not content work. The content moved cleanly because Markdown is Markdown.
+The migration took a couple of hours. Most of that time was configuration and testing, not content work. The content moved cleanly because Markdown is Markdown.
 
 If your current blog setup feels like a black box and you find yourself avoiding changes because you don't know what will break, it might be time for a rebuild. Start with one post, run it locally, see how it feels.
 
