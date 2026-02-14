@@ -4,7 +4,7 @@ description: "Field notes from using Microsoft Enterprise Copilot as a technical
 tags: [Gen AI, AI Tools, Technical Writing]
 ---
 
-A few months ago, I shared my experience with [Msty as an AI aggregator](/blog/2025/08/08/msty) for personal AI projects. Today, I want to talk about how in work we use Enterprise Copilot in the technical writers team.
+A few months ago, I shared my experience with [Msty as an AI aggregator](/2025/08/08/msty) for personal AI projects. Today, I want to talk about how in work we use Enterprise Copilot in the technical writers team.
 
 Here's the thing - documentation work involves a lot of back-and-forth. You get requirements documents, user stories, and sometimes details in emails. Your job is to comprehend and abstract the data to create user guides and release notes. It takes time, multiple drafts, and constant clarifications because information is scattered and not complete.
 
