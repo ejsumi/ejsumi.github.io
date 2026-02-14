@@ -13,7 +13,7 @@
             <link>https://ejsumi.github.io/blog/2025/12/28/aiagents</link>
             <guid>https://ejsumi.github.io/blog/2025/12/28/aiagents</guid>
             <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[I've been asked a lot lately about AI agents - what they are, how they differ from regular ChatGPT/Copilot, and whether they're worth the hype. Here's what I've learned from working with them and managing teams that use them.]]></description>
+            <description><![CDATA[A practical explainer on AI agents — how they differ from regular chat AI, how the agent loop works, and what it means for teams starting to adopt them.]]></description>
             <content:encoded><![CDATA[<p>I've been asked a lot lately about AI agents - what they are, how they differ from regular ChatGPT/Copilot, and whether they're worth the hype. Here's what I've learned from working with them and managing teams that use them.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-actually-is-an-ai-agent">What Actually Is an AI Agent?<a href="https://ejsumi.github.io/blog/2025/12/28/aiagents#what-actually-is-an-ai-agent" class="hash-link" aria-label="Direct link to What Actually Is an AI Agent?" title="Direct link to What Actually Is an AI Agent?" translate="no">​</a></h2>
 <p>Here's the thing - when you use ChatGPT or Copilot, you ask a question, get an answer, then ask another question. It's a conversation. You're in control of every step.</p>
@@ -136,8 +136,8 @@
             <link>https://ejsumi.github.io/blog/2025/10/02/copilitusage</link>
             <guid>https://ejsumi.github.io/blog/2025/10/02/copilitusage</guid>
             <pubDate>Thu, 02 Oct 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[A few months ago, I shared my experience with Msty as an AI aggregator for personal AI projects. Today, I want to talk about how in work we use Enterprise Copilot in the technical writers team.]]></description>
-            <content:encoded><![CDATA[<p>A few months ago, I shared my experience with <a href="https://ejsumi.github.io/projects/2025/08/08/msty.html" target="_blank" rel="noopener noreferrer" class="">Msty as an AI aggregator</a> for personal AI projects. Today, I want to talk about how in work we use Enterprise Copilot in the technical writers team.</p>
+            <description><![CDATA[Field notes from using Microsoft Enterprise Copilot as a technical writer — prompting strategies, real use cases, and what actually works for drafting and reviewing docs.]]></description>
+            <content:encoded><![CDATA[<p>A few months ago, I shared my experience with <a class="" href="https://ejsumi.github.io/blog/2025/08/08/msty">Msty as an AI aggregator</a> for personal AI projects. Today, I want to talk about how in work we use Enterprise Copilot in the technical writers team.</p>
 <p>Here's the thing - documentation work involves a lot of back-and-forth. You get requirements documents, user stories, and sometimes details in emails. Your job is to comprehend and abstract the data to create user guides and release notes. It takes time, multiple drafts, and constant clarifications because information is scattered and not complete.</p>
 <p>In our organization, we have access to Enterprise Copilot, and due to data privacy issues, other AI chat tools are not allowed for project work.</p>
 <p><strong>From Blank Pages to First Drafts</strong></p>
@@ -187,7 +187,7 @@
             <link>https://ejsumi.github.io/blog/2025/08/15/numpy</link>
             <guid>https://ejsumi.github.io/blog/2025/08/15/numpy</guid>
             <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[NumPy (Numerical Python) is a powerful open-source library for numerical and scientific computing in Python. It provides support for large, multi-dimensional arrays and a wide variety of mathematical functions to operate on them efficiently.]]></description>
+            <description><![CDATA[A quick reference guide to NumPy, the foundational Python library for numerical computing, covering arrays, broadcasting, vectorization, and mathematical functions.]]></description>
             <content:encoded><![CDATA[<p>NumPy (Numerical Python) is a powerful open-source library for numerical and scientific computing in Python. It provides support for large, multi-dimensional arrays and a wide variety of mathematical functions to operate on them efficiently.</p>
 <p>NumPy is widely used in <strong>data science, machine learning, artificial intelligence, image processing, and scientific research</strong>. It serves as the foundation for many higher-level libraries like Pandas, SciPy, Scikit-learn, and TensorFlow.</p>
 <hr>
@@ -235,7 +235,7 @@
             <link>https://ejsumi.github.io/blog/2025/08/08/msty</link>
             <guid>https://ejsumi.github.io/blog/2025/08/08/msty</guid>
             <pubDate>Fri, 08 Aug 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[I recently stumbled across Msty, and it solved a problem I'd been having for some time.]]></description>
+            <description><![CDATA[How Msty lets you connect multiple AI APIs (Claude, GPT-4, Gemini) under one roof and pay only for what you use, without monthly subscription lock-in.]]></description>
             <content:encoded><![CDATA[<p>I recently stumbled across <a href="https://msty.app/" target="_blank" rel="noopener noreferrer" class="">Msty</a>, and it solved a problem I'd been having for some time.</p>
 <p>Here's the thing - I wanted to try ChatGPT Plus or Claude Pro, but I'm not a heavy AI user. Paying $20 every month when I might use it a few times felt like throwing money away.</p>
 <p>Some days you're in the mood to experiment, but the free tier isn't enough. Msty solved this perfectly - you just plug in your API key and pay for what you use. No monthly guilt, no "I better use this 20 times to get my money's worth" pressure.</p>
@@ -264,7 +264,7 @@
             <link>https://ejsumi.github.io/blog/2025/08/01/pandas</link>
             <guid>https://ejsumi.github.io/blog/2025/08/01/pandas</guid>
             <pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[- Open source library for Data Analysis and Data manipulation]]></description>
+            <description><![CDATA[A concise quick reference for the Pandas Python library, covering Series, DataFrames, key features, and common data manipulation operations.]]></description>
             <content:encoded><![CDATA[<ul>
 <li class="">Open source library for Data Analysis and Data manipulation</li>
 <li class="">Built on top of NumPy and integrates well with other libraries like Matplotlib, Seaborn, Scikit-learn</li>
@@ -385,7 +385,7 @@
             <link>https://ejsumi.github.io/blog/2025/07/28/project1</link>
             <guid>https://ejsumi.github.io/blog/2025/07/28/project1</guid>
             <pubDate>Mon, 28 Jul 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Driving content systems evolution and GenAI adoption for a multi-product digital banking suite]]></description>
+            <description><![CDATA[How I led the migration of an enterprise knowledge portal from SharePoint to Sitecore, redesigning the information architecture for a microservices-era product suite.]]></description>
             <content:encoded><![CDATA[<p><strong>Driving content systems evolution and GenAI adoption for a multi-product digital banking suite</strong></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-from-sharepoint-to-sitecore-a-strategic-platform-shift">🔧 <strong>From SharePoint to Sitecore: A Strategic Platform Shift</strong><a href="https://ejsumi.github.io/blog/2025/07/28/project1#-from-sharepoint-to-sitecore-a-strategic-platform-shift" class="hash-link" aria-label="Direct link to -from-sharepoint-to-sitecore-a-strategic-platform-shift" title="Direct link to -from-sharepoint-to-sitecore-a-strategic-platform-shift" translate="no">​</a></h3>
 <p>In 2022, I led the full migration of our enterprise knowledge portal — not because it failed, but because it outgrew its purpose.</p>
