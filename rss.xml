@@ -60,16 +60,16 @@
         </item>
         <item>
             <title><![CDATA[Understanding AI Agents]]></title>
-            <link>https://ejsumi.github.io/2025/12/28/aiagents</link>
-            <guid>https://ejsumi.github.io/2025/12/28/aiagents</guid>
-            <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
+            <link>https://ejsumi.github.io/2026/01/10/aiagents</link>
+            <guid>https://ejsumi.github.io/2026/01/10/aiagents</guid>
+            <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[A practical explainer on AI agents — how they differ from regular chat AI, how the agent loop works, and what it means for teams starting to adopt them.]]></description>
-            <content:encoded><![CDATA[<p>I've been asked a lot lately about AI agents - what they are, how they differ from regular ChatGPT/Copilot, and whether they're worth the hype. Here's what I've learned from working with them and managing teams that use them.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-actually-is-an-ai-agent">What Actually Is an AI Agent?<a href="https://ejsumi.github.io/2025/12/28/aiagents#what-actually-is-an-ai-agent" class="hash-link" aria-label="Direct link to What Actually Is an AI Agent?" title="Direct link to What Actually Is an AI Agent?" translate="no">​</a></h2>
+            <content:encoded><![CDATA[<p>I've been hearing a lot about AI agents - what they are, how they differ from regular ChatGPT/Copilot. Here's what I've learned from working with them.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-actually-is-an-ai-agent">What Actually Is an AI Agent?<a href="https://ejsumi.github.io/2026/01/10/aiagents#what-actually-is-an-ai-agent" class="hash-link" aria-label="Direct link to What Actually Is an AI Agent?" title="Direct link to What Actually Is an AI Agent?" translate="no">​</a></h2>
 <p>Here's the thing - when you use ChatGPT or Copilot, you ask a question, get an answer, then ask another question. It's a conversation. You're in control of every step.</p>
 <p>AI agents flip this dynamic. You give them a goal, and they figure out how to get there. They don't wait for you to tell them what to do next - they plan, execute, check results, adjust, and keep going until the job is done.</p>
 <p>Think of it like the difference between giving someone turn-by-turn directions versus just telling them the destination. One requires constant input from you; the other handles navigation independently.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-agent-loop---how-it-works">The Agent Loop - How It Works<a href="https://ejsumi.github.io/2025/12/28/aiagents#the-agent-loop---how-it-works" class="hash-link" aria-label="Direct link to The Agent Loop - How It Works" title="Direct link to The Agent Loop - How It Works" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-agent-loop---how-it-works">The Agent Loop - How It Works<a href="https://ejsumi.github.io/2026/01/10/aiagents#the-agent-loop---how-it-works" class="hash-link" aria-label="Direct link to The Agent Loop - How It Works" title="Direct link to The Agent Loop - How It Works" translate="no">​</a></h2>
 <p>Behind the scenes, AI agents run what's called an "agent loop." It's basically a cycle that repeats until your task is complete:</p>
 <ul>
 <li class="">Remember what's happened so far</li>
@@ -80,14 +80,14 @@
 <li class="">Decide whether to continue or stop</li>
 </ul>
 <p>It's how you'd work through a complex project yourself - except the agent does this in minutes instead of hours.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-makes-up-an-ai-agent">What Makes Up an AI Agent?<a href="https://ejsumi.github.io/2025/12/28/aiagents#what-makes-up-an-ai-agent" class="hash-link" aria-label="Direct link to What Makes Up an AI Agent?" title="Direct link to What Makes Up an AI Agent?" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-makes-up-an-ai-agent">What Makes Up an AI Agent?<a href="https://ejsumi.github.io/2026/01/10/aiagents#what-makes-up-an-ai-agent" class="hash-link" aria-label="Direct link to What Makes Up an AI Agent?" title="Direct link to What Makes Up an AI Agent?" translate="no">​</a></h2>
 <p><strong>Memory</strong><br>
 <!-- -->The agent's record of what's happened. It tracks your request, what actions it's taken, what worked, what failed. Without memory, the agent would repeat mistakes or lose track of progress.</p>
 <p><strong>Rules</strong><br>
 <!-- -->These define what the agent can and cannot do. Think of rules as the agent's job description - its boundaries, capabilities, and guidelines for behavior.</p>
 <p><strong>Tools</strong><br>
 <!-- -->The actual functions the agent can perform. Read files. Query databases. Send emails. Search the web. Create reports. Without tools, the agent can only talk about doing things - it can't actually do them.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="regular-ai-vs-agentic-ai">Regular AI vs. Agentic AI<a href="https://ejsumi.github.io/2025/12/28/aiagents#regular-ai-vs-agentic-ai" class="hash-link" aria-label="Direct link to Regular AI vs. Agentic AI" title="Direct link to Regular AI vs. Agentic AI" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="regular-ai-vs-agentic-ai">Regular AI vs. Agentic AI<a href="https://ejsumi.github.io/2026/01/10/aiagents#regular-ai-vs-agentic-ai" class="hash-link" aria-label="Direct link to Regular AI vs. Agentic AI" title="Direct link to Regular AI vs. Agentic AI" translate="no">​</a></h2>
 <p><strong>Regular Generative AI:</strong></p>
 <ul>
 <li class="">You: "Write a product description"</li>
@@ -101,10 +101,10 @@
 <p><strong>Agentic AI:</strong></p>
 <ul>
 <li class="">You: "Create a product description that matches our brand voice and is under 150 words"</li>
-<li class="">AI: "Let me check your brand guidelines... drafting... checking word count... making adjustments... Done. Here's the description. I also noticed your competitor updated their description last week - want to see a comparison?"</li>
+<li class="">AI: "Let me check your brand guidelines... drafting... checking word count... making adjustments... Done. Here's the description."</li>
 </ul>
 <p>The AI is driving.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-makes-agentic-ai-different">What Makes Agentic AI Different<a href="https://ejsumi.github.io/2025/12/28/aiagents#what-makes-agentic-ai-different" class="hash-link" aria-label="Direct link to What Makes Agentic AI Different" title="Direct link to What Makes Agentic AI Different" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-makes-agentic-ai-different">What Makes Agentic AI Different<a href="https://ejsumi.github.io/2026/01/10/aiagents#what-makes-agentic-ai-different" class="hash-link" aria-label="Direct link to What Makes Agentic AI Different" title="Direct link to What Makes Agentic AI Different" translate="no">​</a></h2>
 <p><strong>Flipped Interaction</strong><br>
 <!-- -->Instead of you asking 20 questions, the AI might ask you 2-3 clarifying questions upfront, then goes off and completes the work.</p>
 <p><strong>Adaptive Planning</strong><br>
@@ -113,10 +113,10 @@
 <!-- -->You say: "Pull last quarter's support tickets and identify common issues."<br>
 <!-- -->The agent translates that into database queries, data analysis, pattern recognition, and report generation.<br>
 <!-- -->You get: A summary without writing code or manually reviewing hundreds of tickets.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-example---reviewing-ui-literals">Real Example - Reviewing UI Literals<a href="https://ejsumi.github.io/2025/12/28/aiagents#real-example---reviewing-ui-literals" class="hash-link" aria-label="Direct link to Real Example - Reviewing UI Literals" title="Direct link to Real Example - Reviewing UI Literals" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-example---reviewing-ui-literals">Real Example - Reviewing UI Literals<a href="https://ejsumi.github.io/2026/01/10/aiagents#real-example---reviewing-ui-literals" class="hash-link" aria-label="Direct link to Real Example - Reviewing UI Literals" title="Direct link to Real Example - Reviewing UI Literals" translate="no">​</a></h2>
 <p>One task that comes up regularly in documentation work is reviewing UI literals - the text strings that appear in software interfaces like button labels, error messages, and menu items.</p>
 <p><strong>The Old Way:</strong><br>
-<!-- -->The developers sends over a spreadsheet with new UI literals for an upcoming release. A writer needs to:</p>
+<!-- -->The developers sends over a spreadsheet with new UI literals for an upcoming release. The writer needs to:</p>
 <ul>
 <li class="">Check each literal against our style guide rules (capitalization, punctuation, word choice)</li>
 <li class="">Get clarity from the product team on the context and requirements</li>
@@ -124,26 +124,25 @@
 </ul>
 <p>This takes several hours of focused, tedious work. Miss one inconsistency, and it ships to users.</p>
 <p><strong>With an AI Agent:</strong><br>
-<!-- -->I give the agent: "Review these 200 new literals against our style guide rules and our verified literal list. Flag anything that doesn't match patterns or rules."</p>
+<!-- -->Give the agent: "Review these 200 new literals against our style guide rules and our verified literal list. Flag anything that doesn't match patterns or rules."</p>
 <p>The agent:</p>
 <ul>
-<li class="">Loads the style guide rules (sentence case for buttons, no periods in labels, specific terminology requirements)</li>
-<li class="">Compares each new literal against the existing verified literals in our database</li>
+<li class="">Loads the style guide rules (title casing, no periods in labels, specific terminology requirements)</li>
+<li class="">Compares each new literal against the guidelines</li>
 <li class="">Identifies 23 literals that don't follow capitalization rules</li>
-<li class="">Flags 8 literals using terminology that differs from established patterns (like "Remove" vs our standard "Delete")</li>
-<li class="">Spots 5 literals that are suspiciously similar to existing ones but with slight variations</li>
+<li class="">Flags 8 literals using terminology that differs from established patterns (like "Remove" vs standard "Delete")</li>
 <li class="">Creates a report categorizing issues by type with specific recommendations</li>
 </ul>
-<p>The writer reviews the flagged items, makes decisions on the genuine edge cases, and focuses on the 15 literals that actually need human judgment. The pattern-matching work? Handled.</p>
+<p>The writer reviews the flagged items, gets clarity from the product team, and does the needful. The pattern-matching work? Handled.</p>
 <p>What makes this powerful is consistency. The agent doesn't get tired on literal 150 and start missing things. It applies the same rigor to every single item.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types-of-ai-agents">Types of AI Agents<a href="https://ejsumi.github.io/2025/12/28/aiagents#types-of-ai-agents" class="hash-link" aria-label="Direct link to Types of AI Agents" title="Direct link to Types of AI Agents" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types-of-ai-agents">Types of AI Agents<a href="https://ejsumi.github.io/2026/01/10/aiagents#types-of-ai-agents" class="hash-link" aria-label="Direct link to Types of AI Agents" title="Direct link to Types of AI Agents" translate="no">​</a></h2>
 <p><strong>Simple Reflex Agents</strong><br>
 <!-- -->Follow basic "if this, then that" rules. If someone asks about pricing, show the pricing page. Straightforward but limited.</p>
 <p><strong>Goal-Based Agents</strong><br>
-<!-- -->Work toward specific objectives. "Reduce customer support tickets by improving documentation." The agent figures out how to achieve that goal.</p>
+<!-- -->Work toward specific objectives. "Identify the inconsistencies in the terminologies used, and provide steps to fix the," The agent figures out how to achieve that goal.</p>
 <p><strong>Learning Agents</strong><br>
-<!-- -->Get better over time. They learn which documentation formats get better user engagement and adapt their approach accordingly.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-reality-check">The Reality Check<a href="https://ejsumi.github.io/2025/12/28/aiagents#the-reality-check" class="hash-link" aria-label="Direct link to The Reality Check" title="Direct link to The Reality Check" translate="no">​</a></h2>
+<!-- -->Get better over time. Based on user interactions and instructions, the responses changes overtime.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-reality-check">The Reality Check<a href="https://ejsumi.github.io/2026/01/10/aiagents#the-reality-check" class="hash-link" aria-label="Direct link to The Reality Check" title="Direct link to The Reality Check" translate="no">​</a></h2>
 <p>Let me be clear - AI agents aren't magic.</p>
 <p><strong>You're Still the Boss</strong><br>
 <!-- -->Set the goals. Define the rules. Review the results. The agent executes; you provide strategy and judgment.</p>
@@ -153,16 +152,14 @@
 <!-- -->Agents make mistakes. They can go off track. You need to review their work, especially initially.</p>
 <p><strong>Human Judgment Can't Be Replaced</strong><br>
 <!-- -->Use agents for execution and coordination. Keep strategic thinking, ethical considerations, and creative decisions in human hands.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-this-means-for-your-team">What This Means for Your Team<a href="https://ejsumi.github.io/2025/12/28/aiagents#what-this-means-for-your-team" class="hash-link" aria-label="Direct link to What This Means for Your Team" title="Direct link to What This Means for Your Team" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-this-means-for-your-team">What This Means for Your Team<a href="https://ejsumi.github.io/2026/01/10/aiagents#what-this-means-for-your-team" class="hash-link" aria-label="Direct link to What This Means for Your Team" title="Direct link to What This Means for Your Team" translate="no">​</a></h2>
 <p><strong>More Time for Strategy</strong><br>
 <!-- -->Your team spends less time on repetitive tasks and more time on work that actually needs human creativity and judgment.</p>
 <p><strong>Faster Execution</strong><br>
-<!-- -->Things that took days now take hours. Multi-step processes that required constant coordination? The agent handles them.</p>
+<!-- -->Things that took days now take hours. Give the task with proper guidelines and let the agent handle it.</p>
 <p><strong>Consistency</strong><br>
 <!-- -->The agent follows rules every time. No shortcuts. No "I'll fix that later" moments. It does what it's supposed to do.</p>
-<p><strong>Scalability</strong><br>
-<!-- -->Handle more work without hiring more people. The agent doesn't get tired or overwhelmed.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-started">Getting Started<a href="https://ejsumi.github.io/2025/12/28/aiagents#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-started">Getting Started<a href="https://ejsumi.github.io/2026/01/10/aiagents#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started" translate="no">​</a></h2>
 <p>Identify one repetitive, multi-step task that eats up your team's time. That's your first candidate for an AI agent.</p>
 <p>It might be:</p>
 <ul>
@@ -173,7 +170,7 @@
 </ul>
 <p>Pick something where the process is clear, the inputs are structured, and the stakes aren't too high if something goes wrong.</p>
 <p>Test it. Refine it. Expand from there.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-bottom-line">The Bottom Line<a href="https://ejsumi.github.io/2025/12/28/aiagents#the-bottom-line" class="hash-link" aria-label="Direct link to The Bottom Line" title="Direct link to The Bottom Line" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-bottom-line">The Bottom Line<a href="https://ejsumi.github.io/2026/01/10/aiagents#the-bottom-line" class="hash-link" aria-label="Direct link to The Bottom Line" title="Direct link to The Bottom Line" translate="no">​</a></h2>
 <p>AI agents aren't just fancy chatbots. They're systems that can handle complex, multi-step work with minimal hand-holding.</p>
 <p>The technology is here. It's getting better fast. Companies figuring out how to use it effectively will have a competitive advantage.</p>
 <p>The question isn't whether AI agents will change how we work - they already are. The question is: How will you put them to work on your team?</p>]]></content:encoded>
