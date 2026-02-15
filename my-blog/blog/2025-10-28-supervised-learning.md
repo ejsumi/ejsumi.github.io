@@ -113,8 +113,8 @@ print(confusion_matrix(y_test, y_pred))
 
 | Data Characteristics | Recommended | Avoid |
 |---------------------|-------------|-------|
-| Small dataset (<1000 rows) | Linear/Logistic Regression, SVM | Deep Neural Networks |
-| Large dataset (>100K rows) | Gradient Boosting, Neural Networks | KNN (slow at prediction time) |
+| Small dataset (&lt;1000 rows) | Linear/Logistic Regression, SVM | Deep Neural Networks |
+| Large dataset (&gt;100K rows) | Gradient Boosting, Neural Networks | KNN (slow at prediction time) |
 | High dimensions, few samples | Linear models with regularization | Tree-based models |
 | Mixed data types | Random Forest, Gradient Boosting | Linear models without preprocessing |
 | Need interpretability | Linear Regression, Decision Trees | Neural Networks, Ensembles |
