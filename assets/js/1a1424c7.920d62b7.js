@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmy_blog=globalThis.webpackChunkmy_blog||[]).push([[5434],{6119(o){o.exports=JSON.parse('{"metadata":{"permalink":"/","page":1,"postsPerPage":10,"totalPages":1,"totalCount":10,"blogDescription":"Thoughts on documentation, platforms, and AI","blogTitle":"Blog"}}')}}]);

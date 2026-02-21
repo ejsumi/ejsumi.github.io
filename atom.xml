@@ -2,10 +2,75 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ejsumi.github.io/</id>
     <title>Sumi Elizabeth Joseph Blog</title>
-    <updated>2026-01-25T00:00:00.000Z</updated>
+    <updated>2026-02-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ejsumi.github.io/"/>
     <subtitle>Sumi Elizabeth Joseph Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[RAG from the Inside: What Building It Taught Me About AI-Readable Docs]]></title>
+        <id>https://ejsumi.github.io/2026/02/14/rag-poc</id>
+        <link href="https://ejsumi.github.io/2026/02/14/rag-poc"/>
+        <updated>2026-02-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I built a RAG POC not to ship a product, but to understand the system my documents feed into — and what it means to write content that AI can actually use.]]></summary>
+        <content type="html"><![CDATA[<p>The ask for technical writers team is to make product documentation both human-readable and AI-readable. The idea is that if a RAG-based system is already being used in the knowledge portal to answer user questions, the quality of those answers depends entirely on how well-structured the source documents are. To understand on to make documents AI scalable, I need to actually understand how RAG works from the inside — not just conceptually, but what happens when you feed it a document and ask a question.</p>
+<p>So I built a POC. I learned a lot more than I expected.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-rag-actually-is">What RAG Actually Is<a href="https://ejsumi.github.io/2026/02/14/rag-poc#what-rag-actually-is" class="hash-link" aria-label="Direct link to What RAG Actually Is" title="Direct link to What RAG Actually Is" translate="no">​</a></h2>
+<p>The short version: RAG lets you ask questions about documents that you upload.</p>
+<p>Here's the thing about regular ChatGPT or any LLM — it only knows what it was trained on. Ask it about your internal policy document or a PDF from last week, and it either makes something up or tells you it doesn't know.</p>
+<p>RAG fixes this. Not by retraining the model, but by retrieving the relevant parts of your document and feeding them to the model alongside your question. The model then generates an answer based on what you just handed it, not from memory.</p>
+<p>There are two distinct phases:</p>
+<p><strong>Indexing</strong> — happens once when you add documents:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">PDF → Extract Text → Chunk → Embed → Store in VectorDB</span><br></span></code></pre></div></div>
+<p><strong>Querying</strong> — happens every time someone asks a question:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Question → Embed → Search VectorDB → Retrieve Chunks → LLM → Answer</span><br></span></code></pre></div></div>
+<p>The key insight that changed how I think about it: the LLM never "reads" your PDF. It only sees the handful of chunks that were retrieved as most relevant to the question. If the retrieval is off, the answer will be off — no matter how capable the model is.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-langchain-and-chromadb">Why LangChain and ChromaDB<a href="https://ejsumi.github.io/2026/02/14/rag-poc#why-langchain-and-chromadb" class="hash-link" aria-label="Direct link to Why LangChain and ChromaDB" title="Direct link to Why LangChain and ChromaDB" translate="no">​</a></h2>
+<p>I had a few options for how to build this. I went with LangChain as the orchestration layer and ChromaDB as the vector store, and the reason was simple: I wanted to get something working first and understand the concepts. Also, was doing a course on Langchain and RAG, so easier to go with what I was learning.</p>
+<p><strong>What LangChain is:</strong> It's an open-source framework for building LLM-powered applications. Instead of writing all the plumbing yourself — API calls, prompt construction, memory management, retrieval logic — LangChain gives you composable building blocks. For this POC, the components I used were:</p>
+<ul>
+<li class=""><strong>ChatOpenAI</strong> — wrapper around OpenAI's chat model, handles API calls and response parsing</li>
+<li class=""><strong>ConversationalRetrievalChain</strong> — the core chain that ties everything together: takes a question, retrieves relevant chunks, builds the prompt, calls the LLM, and returns the answer</li>
+<li class=""><strong>ConversationBufferMemory</strong> — stores the chat history so follow-up questions work without re-asking context</li>
+<li class=""><strong>PromptTemplate</strong> — structures exactly what gets sent to the LLM, including how context and question are combined</li>
+<li class=""><strong>Retriever</strong> — the interface that queries ChromaDB and returns the top K matching chunks</li>
+</ul>
+<p>ChromaDB runs locally, requires no server setup, and stores vectors on disk. Together, they let you go from zero to a working Q&amp;A system in a few hours.</p>
+<p>The tradeoff is real though. LangChain is a thick abstraction layer. You call high-level functions without fully seeing what's happening underneath — how the HTTP calls to the embedding API work, exactly how the similarity search runs, how context is being assembled before it hits the LLM. It works, but it hides the internals.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-i-actually-built">What I Actually Built<a href="https://ejsumi.github.io/2026/02/14/rag-poc#what-i-actually-built" class="hash-link" aria-label="Direct link to What I Actually Built" title="Direct link to What I Actually Built" translate="no">​</a></h2>
+<p>The POC is a Streamlit app that:</p>
+<ul>
+<li class="">Accepts a PDF upload</li>
+<li class="">Chunks and embeds the text using OpenAI's embedding model</li>
+<li class="">Stores the vectors in ChromaDB</li>
+<li class="">Accepts questions in a chat interface</li>
+<li class="">Retrieves the top K relevant chunks and sends them to the LLM</li>
+<li class="">Returns an answer with source citations showing which parts of the document it drew from</li>
+</ul>
+<p>Three components, each independently tuneable:</p>
+<table><thead><tr><th>Component</th><th>What It Does</th><th>What I Used</th></tr></thead><tbody><tr><td>PDF Processor</td><td>Extracts and chunks the text</td><td>pypdf + LangChain text splitter</td></tr><tr><td>Embedding Model</td><td>Converts chunks to vectors for search</td><td>text-embedding-3-small</td></tr><tr><td>LLM</td><td>Generates answers from retrieved chunks</td><td>gpt-4o-mini</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tuning-it--what-actually-changes-responses">Tuning It — What Actually Changes Responses<a href="https://ejsumi.github.io/2026/02/14/rag-poc#tuning-it--what-actually-changes-responses" class="hash-link" aria-label="Direct link to Tuning It — What Actually Changes Responses" title="Direct link to Tuning It — What Actually Changes Responses" translate="no">​</a></h2>
+<p>This is where it got interesting.</p>
+<p>The first answers I got were technically correct but flat. Too literal. The model was pulling exact phrases from the document and reciting them without much synthesis. I started tuning.</p>
+<p><strong>The prompt template</strong> made the biggest difference. Changing how I framed the task — what tone to use, how to handle uncertainty, whether to synthesize across chunks or quote directly — changed the response quality significantly. This is free to change and has no latency cost.</p>
+<p><strong>Temperature</strong> was the one that surprised me most. At low temperature (around 0.1–0.2), the model becomes very conservative. It sticks close to exact wording in the retrieved chunks. If the question uses slightly different phrasing than the document, it can fail to connect them — even when a human would obviously see the relationship. It's not that the answer is wrong; it's that it's too literal.</p>
+<p>Raising the temperature to around 0.5–0.7 made the responses more natural and better at bridging paraphrase gaps. The model was more willing to interpret rather than just recite. For factual Q&amp;A, somewhere in the 0.3–0.5 range felt like the right balance — enough flexibility to handle varied phrasing, not so much that it starts drifting from what's actually in the document.</p>
+<p>The other parameters worth knowing:</p>
+<ul>
+<li class=""><strong>RETRIEVAL_K</strong> — how many chunks get passed to the LLM. More chunks = more context. Going from 3 to 6 noticeably improved answers on complex questions where context was spread across the document.</li>
+<li class=""><strong>CHUNK_SIZE / CHUNK_OVERLAP</strong> — smaller chunks give more precise retrieval but can miss context that spans paragraphs. Larger chunks capture more context but can bring in irrelevant content. Changing these requires re-indexing everything.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-bottom-line">The Bottom Line<a href="https://ejsumi.github.io/2026/02/14/rag-poc#the-bottom-line" class="hash-link" aria-label="Direct link to The Bottom Line" title="Direct link to The Bottom Line" translate="no">​</a></h2>
+<p>RAG is conceptually simple. Two phases, three components. The hard part is understanding which component to adjust when the answers aren't good enough — and right now, the fastest levers are the prompt template, retrival chunks and temperature.</p>
+<p>LangChain and ChromaDB are the right tools to start with. They get you to a working system quickly so you can focus on what actually matters: the quality of retrieval and the quality of the prompts.</p>
+<p>Once you've got that, you peel back the abstraction and build it the hard way. That's where the real understanding is. Next up: rebuilding this without LangChain — raw API calls, custom chunking, manual prompt construction — to see exactly what the framework was doing for me.</p>
+<hr>
+<p><em>Built with Python, LangChain, ChromaDB, and OpenAI. Running locally with Streamlit.</em></p>]]></content>
+        <category label="python" term="python"/>
+        <category label="Gen AI" term="Gen AI"/>
+        <category label="RAG" term="RAG"/>
+        <category label="LangChain" term="LangChain"/>
+        <category label="personal project" term="personal project"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[From Jekyll to Docusaurus]]></title>
         <id>https://ejsumi.github.io/2026/01/25/jekyll-to-docusaurus</id>
