@@ -41,6 +41,13 @@ const config = {
         href: '/img/favicon.svg',
       },
     },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'google-site-verification',
+        content: 'doCms9_5PvKCrhBowyEa3MKAvr8xlIsfo5_06s2ur6E',
+      },
+    },
   ],
 
   // Even if you don't use internationalization, you can use this field to set
