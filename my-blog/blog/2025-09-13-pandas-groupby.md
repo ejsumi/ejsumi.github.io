@@ -1,7 +1,7 @@
 ---
 title: "Pandas GroupBy in Practice: Real-World Scenarios and What to Watch Out For"
 description: "Three real-world GroupBy scenarios — sales performance, campaign ROI, and support ticket analysis — with patterns for aggregation, derived metrics, conditional counts, and the gotchas that trip learners up."
-tags: [Python, Data Analysis, Learning]
+tags: [Python, Data Analysis, Machine Learning]
 ---
 
 When you work with real datasets, raw rows rarely tell the story — you need to roll them up. GroupBy is how you do that.
