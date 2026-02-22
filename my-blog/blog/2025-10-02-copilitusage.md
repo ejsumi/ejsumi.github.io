@@ -1,6 +1,6 @@
 ---
 title: "My Daily Workflow with Enterprise Copilot: A Technical Writer's Field Notes"
-description: "Field notes from using Microsoft Enterprise Copilot as a technical writer — prompting strategies, real use cases, and what actually works for drafting and reviewing docs."
+description: "How a technical writing team actually uses Microsoft Enterprise Copilot — the specific prompts that work, workflows for drafting and gap analysis, and the adoption strategies that made the difference between a tool people ignore and one they rely on."
 tags: [Gen AI, AI Tools, Technical Writing]
 ---
 

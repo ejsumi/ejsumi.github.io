@@ -1,7 +1,7 @@
 ---
 title: "Pandas GroupBy in Practice: Real-World Scenarios and What to Watch Out For"
-description: "Practical guide to GroupBy and aggregation using business scenarios — sales performance, campaign ROI, and support ticket analysis. Covers the gotchas learners commonly hit."
-tags: [python, data analysis, learning]
+description: "Three real-world GroupBy scenarios — sales performance, campaign ROI, and support ticket analysis — with patterns for aggregation, derived metrics, conditional counts, and the gotchas that trip learners up."
+tags: [Python, Data Analysis, Learning]
 ---
 
 When you work with real datasets, raw rows rarely tell the story — you need to roll them up. GroupBy is how you do that.
@@ -201,3 +201,9 @@ This returns a DataFrame with all the original columns — not a summary. Useful
 | Grouped by two columns and got MultiIndex | `.reset_index()` flattens it |
 | Need to count rows matching a condition per group | Create a 0/1 flag column, then `sum()` it in `.agg()` |
 | Want to keep original rows for only some groups | Use `.filter()`, not `.agg()` |
+
+---
+
+**Related posts:**
+- [Pandas Quick Reference](/2025/08/01/pandas) — DataFrame basics, filtering, and common operations
+- [Supervised Learning Quick Reference](/2025/10/28/supervised-learning) — next step after data prep: building models

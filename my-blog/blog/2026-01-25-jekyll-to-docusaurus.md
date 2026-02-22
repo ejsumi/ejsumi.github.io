@@ -1,7 +1,7 @@
 ---
 title: "From Jekyll to Docusaurus"
-description: "Why I moved away from a Jekyll-based GitHub Pages site to Docusaurus, how Claude helped me get there, and the small gotcha that caused a 404 on launch day."
-tags: [Docusaurus, Jekyll, personal project, Gen AI]
+description: "A weekend migration from Jekyll to Docusaurus — the configuration decisions, Claude-assisted workflow, content migration steps, and the one GitHub Pages setting that causes a 404 even after a perfectly clean build."
+tags: [Docusaurus, Jekyll, Personal Project, Gen AI]
 ---
 
 I'd been running this blog on a Jekyll theme for a while. It worked, but I wanted to change the theme and the layput and it was not easy. The friction was real.

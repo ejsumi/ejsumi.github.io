@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning Practice Problems: Classification vs Regression"
-description: "A practical walkthrough of ML problems with both categorical and numerical targets — what changes in your pipeline, how to encode correctly, which metrics to use, and the gotchas to watch out for."
-tags: [python, machine learning, learning]
+description: "Side-by-side walkthrough of classification and regression pipelines using real practice problems — laptop pricing, customer churn, and course selection — with encoding patterns, scaling gotchas, and the key differences in each pipeline."
+tags: [Python, Machine Learning, Learning]
 ---
 
 When you start working through ML practice problems, you'll notice that two problems can look almost identical — same preprocessing steps, same train/test split structure — but one has a price as the target and the other has a category. That difference changes several things in your pipeline.
@@ -224,3 +224,9 @@ print(pred_course)  # e.g., 'DataScience'
 | Accuracy on imbalanced classes | Use `classification_report()` — read per-class Precision, Recall, F1 |
 | Outliers before regression | Check with IQR before scaling — one extreme value skews the whole scaler |
 | Feature engineering | Derive meaningful columns before training (e.g., Car_Age = 2024 - Year) |
+
+---
+
+**Related posts:**
+- [Supervised Learning Quick Reference](/2025/10/28/supervised-learning) — evaluation metrics, model comparison table, and decision framework
+- [Pandas GroupBy in Practice](/2025/09/13/pandas-groupby) — data aggregation patterns useful in feature engineering

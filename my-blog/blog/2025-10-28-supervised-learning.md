@@ -1,7 +1,7 @@
 ---
 title: "Supervised Learning: A Quick Reference"
-description: "A concise quick reference for Supervised Learning, covering classification vs regression, evaluation metrics, top models, and how to choose the right approach."
-tags: [python, machine learning, learning]
+description: "Quick reference for supervised learning — how to tell classification from regression, which evaluation metrics to use and when, a model comparison table, and a decision framework for choosing your starting point."
+tags: [Python, Machine Learning, Learning]
 ---
 
 Supervised learning is a machine learning approach where models learn from labeled training data to make predictions on new, unseen data. The algorithm learns the relationship between input features (X) and target variables (y) to generalize patterns.
@@ -147,3 +147,8 @@ print(confusion_matrix(y_test, y_pred))
 - **Pick metrics based on business context** — A high accuracy score can hide a useless model on imbalanced data. Know the cost of FP vs FN in your problem.
 - **Feature engineering often beats model complexity** — Clean, relevant features matter more than which model you pick.
 - **Cross-validate** — A single train/test split can mislead you. Use cross-validation for a reliable performance estimate.
+
+---
+
+**Related posts:**
+- [ML Practice Problems: Classification vs Regression](/2025/11/13/ml-classification-vs-regression) — applying these concepts through real end-to-end pipelines
