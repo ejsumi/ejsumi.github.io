@@ -69,7 +69,7 @@ const config = {
           showReadingTime: true,
 
           blogTitle: 'Blog',
-          blogDescription: 'Thoughts on documentation, platforms, and AI',
+          blogDescription: 'Blog by Sumi Elizabeth Joseph — a documentation specialist and knowledge platform expert. Writes about technical writing, AI tools, enterprise knowledge management, and hands-on learning in Python and machine learning.',
           blogSidebarTitle: 'All Posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 10,
