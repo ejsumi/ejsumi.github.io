@@ -98,6 +98,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      metadata: [
+        {
+          name: 'description',
+          content: 'Blog by Sumi Elizabeth Joseph — a documentation specialist and knowledge platform expert. Writes about technical writing, AI tools, enterprise knowledge management, and hands-on learning in Python and machine learning.',
+        },
+      ],
       colorMode: {
         respectPrefersColorScheme: true,
       },
