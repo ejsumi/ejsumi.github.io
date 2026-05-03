@@ -1,7 +1,7 @@
 ---
-title: "RAG from the Inside: What Building It Taught Me About AI-Readable Docs"
-description: "Built a RAG system using LangChain and ChromaDB to understand what actually happens to documents inside the pipeline — and what it revealed about writing content that AI can retrieve and use effectively."
-tags: [Python, Gen AI, RAG, LangChain, Personal Project]
+title: "How Unstructured Intent Becomes Confidently Wrong Answers"
+description: "When our RAG-based knowledge assistant started returning incomplete and merged answers, the instinct was to blame the model. The problem was the content. Here's what I observed — and what we changed."
+tags: [Technical Writing, Content Strategy, RAG, Context Engineering]
 ---
 
 The RAG-based knowledge assistant had access to the product user guides. But it was returning incomplete responses, merging unrelated scenarios, and occasionally filling gaps with information that existed nowhere in the source material.
