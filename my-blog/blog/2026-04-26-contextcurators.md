@@ -100,7 +100,7 @@ The answer depends on decisions you're already making. The scope just expanded.
  
 ---
  
-*Related posts: [RAG from the Inside: What Building It Taught Me About AI-Readable Docs] · [Knowledge AI Assistant: What We Built and What We Learned]*
+*Related posts: [RAG from the Inside: What Building It Taught Me About AI-Readable Docs]*
  
 *Tags: Technical Writing · Content Strategy · RAG · AI-Ready Content · Context Engineering*
  
