@@ -2,10 +2,137 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ejsumi.github.io/</id>
     <title>Sumi Elizabeth Joseph Blog</title>
-    <updated>2026-02-14T00:00:00.000Z</updated>
+    <updated>2026-04-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ejsumi.github.io/"/>
     <subtitle>Sumi Elizabeth Joseph Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[RAG from the Inside: What Building It Taught Me About AI-Readable Docs]]></title>
+        <id>https://ejsumi.github.io/2026/04/26/contextcurators</id>
+        <link href="https://ejsumi.github.io/2026/04/26/contextcurators"/>
+        <updated>2026-04-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Built a RAG system using LangChain and ChromaDB to understand what actually happens to documents inside the pipeline — and what it revealed about writing content that AI can retrieve and use effectively.]]></summary>
+        <content type="html"><![CDATA[<p>The RAG-based knowledge assistant had access to the product user guides. But it was returning incomplete responses, merging unrelated scenarios, and occasionally filling gaps with information that existed nowhere in the source material.</p>
+<p>The problem wasn't the AI. The problem was what we handed it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-failure-nobody-logged-as-a-content-problem">The failure nobody logged as a content problem<a href="https://ejsumi.github.io/2026/04/26/contextcurators#the-failure-nobody-logged-as-a-content-problem" class="hash-link" aria-label="Direct link to The failure nobody logged as a content problem" title="Direct link to The failure nobody logged as a content problem" translate="no">​</a></h2>
+<p>We were validating RAG outputs with SMEs. The answers looked plausible. But when the SMEs flagged something as wrong and we went back to the source docs, the information was there — it just hadn't been retrieved correctly, or it had been retrieved alongside something unrelated and stitched together.</p>
+<p>Three patterns kept surfacing:</p>
+<ul>
+<li class="">The assistant required multiple prompts to return a complete answer — not because the answer was missing, but because intent was distributed across topics</li>
+<li class="">In one case, it merged two unrelated scenarios because they shared surface-level terminology</li>
+<li class="">In a few cases, it filled gaps with content that didn't exist in any source document
+These weren't hallucinations in the dramatic sense. They were inference failures dressed as answers.</li>
+</ul>
+<p>The humans reading the same docs would have used surrounding context, prior knowledge, and document structure to self-correct. The AI had none of that scaffolding.</p>
+<p><strong>The AI didn't fail. The content did.</strong></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-unstructured-intent-actually-looks-like">What unstructured intent actually looks like<a href="https://ejsumi.github.io/2026/04/26/contextcurators#what-unstructured-intent-actually-looks-like" class="hash-link" aria-label="Direct link to What unstructured intent actually looks like" title="Direct link to What unstructured intent actually looks like" translate="no">​</a></h2>
+<p>When I started reading about why AI systems struggle with certain content, I recognized what we had built immediately.</p>
+<p>Our docs had:</p>
+<ul>
+<li class="">Topics titled "Introduction" that covered three different concepts</li>
+<li class="">Procedures that started with context, drifted into a concept, and ended with a note that belonged in a different topic</li>
+<li class="">Relationships between topics that existed in the writer's head but nowhere in the content</li>
+<li class="">Metadata that identified <em>what</em> something was — product name, version — but not <em>what it's for</em> or <em>who it's for</em>
+Content written for human inference breaks when machines attempt retrieval. Humans fill gaps with judgment. LLMs fill gaps with probability.</li>
+</ul>
+<p>When content has no declared purpose, the model assigns one. When a topic covers three things, the model picks the one that best matches the surface pattern of the query. When relationships between topics are implied rather than stated, the model either misses the connection or invents one.</p>
+<p>Unstructured intent doesn't just make retrieval harder. It makes wrong answers more likely — and more confident.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-we-changed-in-the-product-docs">What we changed in the product docs<a href="https://ejsumi.github.io/2026/04/26/contextcurators#what-we-changed-in-the-product-docs" class="hash-link" aria-label="Direct link to What we changed in the product docs" title="Direct link to What we changed in the product docs" translate="no">​</a></h2>
+<p>The team restructured the docs for the new product with this in mind. Here's what changed and why it mattered:</p>
+<p><strong>Title naming</strong>
+We moved away from positional labels like "Introduction" and "Overview" to intent-signaling titles that tell both the AI and the reader exactly what the topic does. A topic titled "How the sync process handles conflict resolution" is far more retrievable than one titled "Sync overview."</p>
+<p><strong>Single-intent structuring</strong>
+One topic, one purpose. If a topic was doing two jobs, it became two topics. This sounds obvious until you look at how many docs have a "Prerequisites" section that is doing three jobs simultaneously.</p>
+<p><strong>Explicit relationship mapping</strong>
+Connections between topics that were previously implied are now declared — either through structured cross-references or through explicit framing within the topic itself. If topic B only makes sense after topic A, that dependency is stated, not assumed.</p>
+<p><strong>Deliberate use of note and info tags</strong>
+Not decorative. Used to signal constraints, exceptions, and scope boundaries — the things most likely to disappear when content is chunked.</p>
+<p><strong>Metadata additions</strong>
+Role, purpose, product, version — so the AI knows not just what the content is, but who it's for and where it applies.</p>
+<p>The result: fewer prompts needed to get a complete answer. The false merges we had observed stopped appearing.</p>
+<p>Let me be clear: this wasn't a complete overhaul. It was targeted changes to structure and metadata on new content. The existing docs still have the same problems. This is a forward-looking fix, not a retroactive one.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-it-matters-for-technical-writers">Why it matters for technical writers<a href="https://ejsumi.github.io/2026/04/26/contextcurators#why-it-matters-for-technical-writers" class="hash-link" aria-label="Direct link to Why it matters for technical writers" title="Direct link to Why it matters for technical writers" translate="no">​</a></h2>
+<p>When a human reads documentation, they bring judgment to the gaps. They recognize when a term is being used loosely, skip sections that don't apply to them, and flag when something feels outdated. AI systems do none of that. What you write — and how you organize it — is the only signal they have.</p>
+<p>Three things I now think about differently because of this:</p>
+<p><strong>Traceability</strong>
+In a human-facing doc, traceability means you can explain where a decision came from. In an AI-assisted system, it means you can explain how the system arrived at its answer.If you cannot explain how the AI arrived at its answer, you cannot trust or improve it. Traceability in AI outputs is a natural extension of the version control and review workflows writers already run. The difference is that now the audit trail has a new consumer: the team trying to understand why the AI said what it said.</p>
+<p><strong>Terminology consistency</strong>
+AI systems do not resolve synonyms the way humans do. A reader who sees "user," "end user," and "customer" in different topics will usually infer they mean the same thing. A retrieval system may not. If your docs use three terms for the same concept — across different topics, different versions, or different product lines — the model treats them as three different things. Inconsistent terminology doesn't just create noise. It creates retrieval gaps where the right content exists but never surfaces because the query and the doc don't share the same word.</p>
+<p><strong>Content governance</strong>
+Outdated content is a UX problem for human readers. For AI systems, it is a source contamination problem. When conflicting or superseded content sits alongside current content in the same knowledge base, retrieval doesn't flag the conflict — it returns both, weighted by pattern match. The AI has no way to know that a 2022 procedure was replaced by a 2024 one unless that relationship is declared somewhere in the content. Governance practices that writers already run — deprecation workflows, version tagging, review cycles — become critical inputs to what the AI knows and doesn't know.</p>
+<p>Metadata can help, but it cannot replace explanation. Structure can support meaning, but it cannot invent it.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-content-curators-to-context-curators">From content curators to context curators<a href="https://ejsumi.github.io/2026/04/26/contextcurators#from-content-curators-to-context-curators" class="hash-link" aria-label="Direct link to From content curators to context curators" title="Direct link to From content curators to context curators" translate="no">​</a></h2>
+<p>Raw content handed to an AI is not documentation. It is raw material.</p>
+<p>The technical writer's role now includes anticipating what an AI system needs to perform correctly — not just what a human needs to read comfortably.</p>
+<p>Before your next release, ask:</p>
+<ul>
+<li class="">Are topic titles signaling intent, or just labeling position?</li>
+<li class="">Does each topic cover a single purpose?</li>
+<li class="">Are relationships between topics explicit, or assumed?</li>
+<li class="">Does your metadata tell the AI who this content is for and what constraints apply?</li>
+<li class="">If the content is chunked and stripped of surrounding context, does the meaning survive?
+The question to sit with: if your content governance disappeared tomorrow and an AI was trained only on your docs — would it become confidently right, or confidently wrong?</li>
+</ul>
+<p>The answer depends on decisions you're already making. The scope just expanded.</p>
+<hr>
+<p><em>Related posts: [RAG from the Inside: What Building It Taught Me About AI-Readable Docs]</em></p>
+<p><em>Tags: Technical Writing · Content Strategy · RAG · AI-Ready Content · Context Engineering</em></p>]]></content>
+        <category label="Python" term="Python"/>
+        <category label="Gen AI" term="Gen AI"/>
+        <category label="RAG" term="RAG"/>
+        <category label="LangChain" term="LangChain"/>
+        <category label="Personal Project" term="Personal Project"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[From Jekyll to Docusaurus]]></title>
+        <id>https://ejsumi.github.io/2026/03/13/jekyll-to-docusaurus</id>
+        <link href="https://ejsumi.github.io/2026/03/13/jekyll-to-docusaurus"/>
+        <updated>2026-03-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A weekend migration from Jekyll to Docusaurus — the configuration decisions, Claude-assisted workflow, content migration steps, and the one GitHub Pages setting that causes a 404 even after a perfectly clean build.]]></summary>
+        <content type="html"><![CDATA[<p>I'd been running this blog on a Jekyll theme for a while. It worked, but I wanted to change the theme and the layput and it was not easy. The friction was real.</p>
+<p>I had heard about Docusaurus - React-based, clean defaults, built for content. I was curious enough to try it.</p>
+<p>Here's the thing - I didn't want to spend days on migration. I wanted a working site in a weekend. So I brought Claude into the process from the start.</p>
+<p><strong>Getting the Environment Ready</strong></p>
+<p>First step: Node. Docusaurus requires Node 18 or higher. I already had it installed, but if you're starting from scratch, the <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" class="">Node.js site</a> has straightforward installers for Windows, Mac, and Linux.</p>
+<p>Once Node was in place, scaffolding the project took one command:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npx create-docusaurus@latest my-blog classic</span><br></span></code></pre></div></div>
+<p>This sets up everything — the folder structure, default blog, config file, and a local dev server. I chose the <code>classic</code> preset because it includes the blog plugin out of the box, which is all I needed.</p>
+<p><strong>Where Claude Came In</strong></p>
+<p>I asked Claude to walk me through the migration. I explained what I had (a Jekyll site with a handful of blog posts and a few pages) and what I wanted (a Docusaurus blog with the same content, without docs or a landing page).</p>
+<p>The back-and-forth was genuinely useful. Claude flagged things I hadn't thought about — like turning off the docs plugin entirely, setting up the blog as the homepage, and making sure the frontmatter format matched what Docusaurus expected.</p>
+<p>I didn't follow every suggestion blindly. Some recommendations needed adjusting once I saw how my specific setup worked. But having that starting point saved me from reading through the entire Docusaurus docs before writing a single line of config.</p>
+<p><strong>Migrating the Posts</strong></p>
+<p>I didn't move everything at once. I picked one post, copied it into the <code>blog/</code> folder, adjusted the frontmatter, and ran the local server:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm start</span><br></span></code></pre></div></div>
+<p>The post showed up. The formatting looked right. That small proof of concept gave me the confidence to move the rest.</p>
+<p>The main frontmatter difference from Jekyll: Docusaurus uses <code>tags</code> as an array directly in YAML, and it's stricter about dates matching the filename. I moved the remaining five posts in one go, ran the server again, and everything rendered cleanly.</p>
+<p><strong>Setting Up Deployment</strong></p>
+<p>For GitHub Pages, I created a GitHub Actions workflow at <code>.github/workflows/deploy.yml</code>. The workflow runs on every push to <code>main</code>, builds the site inside the <code>my-blog/</code> folder, and pushes the output to a <code>gh-pages</code> branch using the <code>peaceiris/actions-gh-pages</code> action.</p>
+<p>I committed everything and pushed.</p>
+<p><strong>The Gotcha</strong></p>
+<p>The workflow ran successfully. The <code>gh-pages</code> branch was created. But the site showed a 404.</p>
+<p>Turned out the GitHub Pages source was still pointing to the <code>main</code> branch — left over from the old Jekyll setup. The fix took thirty seconds: <strong>Settings → Pages → Source → branch: gh-pages, folder: /</strong></p>
+<p>That was it. The site came up immediately after saving.</p>
+<p><strong>Styling Tweaks</strong></p>
+<p>Once the content was live, I made a few small adjustments:</p>
+<ul>
+<li class="">Replaced the default green color scheme with blue f — one CSS variable change that cascades through titles, tags, and the active nav tab</li>
+<li class="">Removed the Docusaurus logo</li>
+<li class="">Added <code>description</code> frontmatter to all posts for proper meta descriptions in search results</li>
+</ul>
+<p>Each change was small, but together they made the site feel like mine rather than a starter template.</p>
+<p><strong>Was It Worth It?</strong></p>
+<p>Yes. I liked the layout of Docusaurus more and it is node based.</p>
+<p>The migration took a couple of hours. Most of that time was configuration and testing, not content work. The content moved cleanly because Markdown is Markdown.</p>
+<p>If your current blog setup feels like a black box and you find yourself avoiding changes because you don't know what will break, it might be time for a rebuild. Start with one post, run it locally, see how it feels.</p>
+<p>Sometimes the best reason to migrate is just that you'll actually enjoy maintaining it afterward.</p>
+<hr>
+<p><em>Built with Docusaurus. Migrated with Claude's help. Deployed on GitHub Pages.</em></p>]]></content>
+        <category label="Docusaurus" term="Docusaurus"/>
+        <category label="Jekyll" term="Jekyll"/>
+        <category label="Personal Project" term="Personal Project"/>
+        <category label="Gen AI" term="Gen AI"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[RAG from the Inside: What Building It Taught Me About AI-Readable Docs]]></title>
         <id>https://ejsumi.github.io/2026/02/14/rag-poc</id>
@@ -76,56 +203,6 @@
         <category label="RAG" term="RAG"/>
         <category label="LangChain" term="LangChain"/>
         <category label="Personal Project" term="Personal Project"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[From Jekyll to Docusaurus]]></title>
-        <id>https://ejsumi.github.io/2026/01/25/jekyll-to-docusaurus</id>
-        <link href="https://ejsumi.github.io/2026/01/25/jekyll-to-docusaurus"/>
-        <updated>2026-01-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[A weekend migration from Jekyll to Docusaurus — the configuration decisions, Claude-assisted workflow, content migration steps, and the one GitHub Pages setting that causes a 404 even after a perfectly clean build.]]></summary>
-        <content type="html"><![CDATA[<p>I'd been running this blog on a Jekyll theme for a while. It worked, but I wanted to change the theme and the layput and it was not easy. The friction was real.</p>
-<p>I had heard about Docusaurus - React-based, clean defaults, built for content. I was curious enough to try it.</p>
-<p>Here's the thing - I didn't want to spend days on migration. I wanted a working site in a weekend. So I brought Claude into the process from the start.</p>
-<p><strong>Getting the Environment Ready</strong></p>
-<p>First step: Node. Docusaurus requires Node 18 or higher. I already had it installed, but if you're starting from scratch, the <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" class="">Node.js site</a> has straightforward installers for Windows, Mac, and Linux.</p>
-<p>Once Node was in place, scaffolding the project took one command:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npx create-docusaurus@latest my-blog classic</span><br></span></code></pre></div></div>
-<p>This sets up everything — the folder structure, default blog, config file, and a local dev server. I chose the <code>classic</code> preset because it includes the blog plugin out of the box, which is all I needed.</p>
-<p><strong>Where Claude Came In</strong></p>
-<p>I asked Claude to walk me through the migration. I explained what I had (a Jekyll site with a handful of blog posts and a few pages) and what I wanted (a Docusaurus blog with the same content, without docs or a landing page).</p>
-<p>The back-and-forth was genuinely useful. Claude flagged things I hadn't thought about — like turning off the docs plugin entirely, setting up the blog as the homepage, and making sure the frontmatter format matched what Docusaurus expected.</p>
-<p>I didn't follow every suggestion blindly. Some recommendations needed adjusting once I saw how my specific setup worked. But having that starting point saved me from reading through the entire Docusaurus docs before writing a single line of config.</p>
-<p><strong>Migrating the Posts</strong></p>
-<p>I didn't move everything at once. I picked one post, copied it into the <code>blog/</code> folder, adjusted the frontmatter, and ran the local server:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm start</span><br></span></code></pre></div></div>
-<p>The post showed up. The formatting looked right. That small proof of concept gave me the confidence to move the rest.</p>
-<p>The main frontmatter difference from Jekyll: Docusaurus uses <code>tags</code> as an array directly in YAML, and it's stricter about dates matching the filename. I moved the remaining five posts in one go, ran the server again, and everything rendered cleanly.</p>
-<p><strong>Setting Up Deployment</strong></p>
-<p>For GitHub Pages, I created a GitHub Actions workflow at <code>.github/workflows/deploy.yml</code>. The workflow runs on every push to <code>main</code>, builds the site inside the <code>my-blog/</code> folder, and pushes the output to a <code>gh-pages</code> branch using the <code>peaceiris/actions-gh-pages</code> action.</p>
-<p>I committed everything and pushed.</p>
-<p><strong>The Gotcha</strong></p>
-<p>The workflow ran successfully. The <code>gh-pages</code> branch was created. But the site showed a 404.</p>
-<p>Turned out the GitHub Pages source was still pointing to the <code>main</code> branch — left over from the old Jekyll setup. The fix took thirty seconds: <strong>Settings → Pages → Source → branch: gh-pages, folder: /</strong></p>
-<p>That was it. The site came up immediately after saving.</p>
-<p><strong>Styling Tweaks</strong></p>
-<p>Once the content was live, I made a few small adjustments:</p>
-<ul>
-<li class="">Replaced the default green color scheme with blue f — one CSS variable change that cascades through titles, tags, and the active nav tab</li>
-<li class="">Removed the Docusaurus logo</li>
-<li class="">Added <code>description</code> frontmatter to all posts for proper meta descriptions in search results</li>
-</ul>
-<p>Each change was small, but together they made the site feel like mine rather than a starter template.</p>
-<p><strong>Was It Worth It?</strong></p>
-<p>Yes. I liked the layout of Docusaurus more and it is node based.</p>
-<p>The migration took a couple of hours. Most of that time was configuration and testing, not content work. The content moved cleanly because Markdown is Markdown.</p>
-<p>If your current blog setup feels like a black box and you find yourself avoiding changes because you don't know what will break, it might be time for a rebuild. Start with one post, run it locally, see how it feels.</p>
-<p>Sometimes the best reason to migrate is just that you'll actually enjoy maintaining it afterward.</p>
-<hr>
-<p><em>Built with Docusaurus. Migrated with Claude's help. Deployed on GitHub Pages.</em></p>]]></content>
-        <category label="Docusaurus" term="Docusaurus"/>
-        <category label="Jekyll" term="Jekyll"/>
-        <category label="Personal Project" term="Personal Project"/>
-        <category label="Gen AI" term="Gen AI"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Understanding AI Agents]]></title>
