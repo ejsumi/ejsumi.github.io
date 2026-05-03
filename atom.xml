@@ -75,8 +75,10 @@ The question to sit with: if your content governance disappeared tomorrow and an
 </ul>
 <p>The answer depends on decisions you're already making. The scope just expanded.</p>
 <hr>
-<p><em>Related posts: [RAG from the Inside: What Building It Taught Me About AI-Readable Docs]</em></p>
-<p><em>Tags: Technical Writing · Content Strategy · RAG · AI-Ready Content · Context Engineering</em></p>]]></content>
+<p><strong>Related posts:</strong></p>
+<ul>
+<li class=""><a class="" href="https://ejsumi.github.io/2026/02/14/rag-poc">RAG from the Inside: What Building It Taught Me About AI-Readable Docs</a></li>
+</ul>]]></content>
         <category label="Technical Writing" term="Technical Writing"/>
         <category label="Content Strategy" term="Content Strategy"/>
         <category label="RAG" term="RAG"/>
