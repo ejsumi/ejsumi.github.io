@@ -1,7 +1,7 @@
 ---
 title: "Supervised Learning: A Quick Reference"
 description: "Quick reference for supervised learning — how to tell classification from regression, which evaluation metrics to use and when, a model comparison table, and a decision framework for choosing your starting point."
-tags: [Python, Machine Learning, Learning]
+tags: [Python, Machine Learning, Quick Reference]
 ---
 
 Supervised learning is a machine learning approach where models learn from labeled training data to make predictions on new, unseen data. The algorithm learns the relationship between input features (X) and target variables (y) to generalize patterns.

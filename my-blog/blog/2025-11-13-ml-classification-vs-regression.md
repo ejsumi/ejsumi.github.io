@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning Practice Problems: Classification vs Regression"
 description: "Side-by-side walkthrough of classification and regression pipelines using real practice problems — laptop pricing, customer churn, and course selection — with encoding patterns, scaling gotchas, and the key differences in each pipeline."
-tags: [Python, Machine Learning, Learning]
+tags: [Python, Machine Learning, Quick Reference]
 ---
 
 When you start working through ML practice problems, you'll notice that two problems can look almost identical — same preprocessing steps, same train/test split structure — but one has a price as the target and the other has a category. That difference changes several things in your pipeline.
