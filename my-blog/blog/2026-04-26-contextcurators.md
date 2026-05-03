@@ -101,7 +101,7 @@ The answer depends on decisions you're already making. The scope just expanded.
 ---
  
 **Related posts:**  
-- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](2026/02/14/rag-poc)
+- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](/2026/02/14/rag-poc)
  
 
  
