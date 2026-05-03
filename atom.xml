@@ -7,11 +7,11 @@
     <link rel="alternate" href="https://ejsumi.github.io/"/>
     <subtitle>Sumi Elizabeth Joseph Blog</subtitle>
     <entry>
-        <title type="html"><![CDATA[RAG from the Inside: What Building It Taught Me About AI-Readable Docs]]></title>
+        <title type="html"><![CDATA[How Unstructured Intent Becomes Confidently Wrong Answers]]></title>
         <id>https://ejsumi.github.io/2026/04/26/contextcurators</id>
         <link href="https://ejsumi.github.io/2026/04/26/contextcurators"/>
         <updated>2026-04-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Built a RAG system using LangChain and ChromaDB to understand what actually happens to documents inside the pipeline — and what it revealed about writing content that AI can retrieve and use effectively.]]></summary>
+        <summary type="html"><![CDATA[When our RAG-based knowledge assistant started returning incomplete and merged answers, the instinct was to blame the model. The problem was the content. Here's what I observed — and what we changed.]]></summary>
         <content type="html"><![CDATA[<p>The RAG-based knowledge assistant had access to the product user guides. But it was returning incomplete responses, merging unrelated scenarios, and occasionally filling gaps with information that existed nowhere in the source material.</p>
 <p>The problem wasn't the AI. The problem was what we handed it.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-failure-nobody-logged-as-a-content-problem">The failure nobody logged as a content problem<a href="https://ejsumi.github.io/2026/04/26/contextcurators#the-failure-nobody-logged-as-a-content-problem" class="hash-link" aria-label="Direct link to The failure nobody logged as a content problem" title="Direct link to The failure nobody logged as a content problem" translate="no">​</a></h2>
@@ -77,11 +77,10 @@ The question to sit with: if your content governance disappeared tomorrow and an
 <hr>
 <p><em>Related posts: [RAG from the Inside: What Building It Taught Me About AI-Readable Docs]</em></p>
 <p><em>Tags: Technical Writing · Content Strategy · RAG · AI-Ready Content · Context Engineering</em></p>]]></content>
-        <category label="Python" term="Python"/>
-        <category label="Gen AI" term="Gen AI"/>
+        <category label="Technical Writing" term="Technical Writing"/>
+        <category label="Content Strategy" term="Content Strategy"/>
         <category label="RAG" term="RAG"/>
-        <category label="LangChain" term="LangChain"/>
-        <category label="Personal Project" term="Personal Project"/>
+        <category label="Context Engineering" term="Context Engineering"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[From Jekyll to Docusaurus]]></title>
