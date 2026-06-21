@@ -64,11 +64,11 @@ Task (natural language goal)
       └────┬────┴────┬────┘
            ▼         ▼
           Review Results
-             │
-             ▼
-          Update Memory
-             │
-             ↺
+               │
+               ▼
+            Update Memory
+               │
+               ↺
 
 ```
 
