@@ -93,6 +93,26 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'playbook',                    // unique ID for this instance
+        routeBasePath: 'playbook',         // URL will be /playbook
+        path: './playbook',                // folder you created in Step 1
+        blogTitle: 'Playbook',
+        blogDescription: 'Step-by-step playbooks by Sumi',
+        blogSidebarTitle: 'All Playbooks',
+        blogSidebarCount: 'ALL',
+        showReadingTime: true,
+        postsPerPage: 10,
+        onInlineTags: 'warn',
+        onInlineAuthors: 'warn',
+        onUntruncatedBlogPosts: 'warn',
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -115,6 +135,7 @@ const config = {
         },
         items: [
           { to: '/', label: 'Blog', position: 'left' },
+          { to: '/playbook', label: 'Playbook', position: 'left' },
           { to: '/about', label: 'About', position: 'left' },
           {
             href: 'https://www.linkedin.com/in/sumi-elizabeth-joseph/',
@@ -130,6 +151,7 @@ const config = {
             title: 'Explore',
             items: [
               { label: 'Blog', to: '/' },
+              { label: 'Playbook', to: '/playbook' }, 
               { label: 'About', to: '/about' },  
             ],
           },
