@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_blog=globalThis.webpackChunkmy_blog||[]).push([[480],{9090(o){o.exports=JSON.parse('{"metadata":{"permalink":"/playbook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Step-by-step playbooks by Sumi","blogTitle":"Playbook"}}')}}]);

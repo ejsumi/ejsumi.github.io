@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_blog=globalThis.webpackChunkmy_blog||[]).push([[6856],{3368(o){o.exports=JSON.parse('{"blogBasePath":"/playbook","blogTitle":"Playbook","authorsListPath":"/playbook/authors"}')}}]);

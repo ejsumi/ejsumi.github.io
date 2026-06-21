@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ejsumi.github.io/playbook</id>
+    <title>Sumi Elizabeth Joseph Blog</title>
+    <updated>2026-04-26T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://ejsumi.github.io/playbook"/>
+    <subtitle>Sumi Elizabeth Joseph Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Playbook: Agentic AI Systems]]></title>
+        <id>https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems</id>
+        <link href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems"/>
+        <updated>2026-04-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[My learnings from doing courses on agentic AI]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>Agentic AI systems don't just respond — they reason, act, and adapt.
+This playbook covers how agents are designed, what makes them reliable,
+and what I learned building documentation and language review pipelines with them.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-it-matters">Why It Matters<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#why-it-matters" class="hash-link" aria-label="Direct link to Why It Matters" title="Direct link to Why It Matters" translate="no">​</a></h2>
+<p>My interest in Agentic AI didn't start with a course. It started with a recurring problem.</p>
+<p>I work with APIs, documentation, and developer enablement content. GenAI was useful for rephrasing — but the real challenge was never the writing. It was everything that happened <em>before</em> the writing: understanding APIs, identifying relationships, organising information, applying structure, validating outputs, maintaining consistency. These aren't single prompts. They're workflows.</p>
+<p>I needed systems that could reason through a task, use tools, remember what they'd already done, and adapt as they went. That's what led me here.</p>
+<ul>
+<li class="">Agentic AI is becoming the default model for automating technical and knowledge-intensive work — across software development, content operations, and API-driven product teams</li>
+<li class="">Engineers use agents to automate tool chains. PMs use them to prototype decision flows. Technical writers use them to generate structured content from raw inputs</li>
+<li class="">I picked these courses to build a proper conceptual framework around hands-on work I'd already started — understanding <em>why</em> agents are designed the way they are, not just how to get them running</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mental-model">Mental Model<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#mental-model" class="hash-link" aria-label="Direct link to Mental Model" title="Direct link to Mental Model" translate="no">​</a></h2>
+<p><em>A chatbot answers questions. An agent pursues goals. That distinction sounds small — but it changes everything about how you design a system.</em></p>
+<p>Task (natural language goal)<br>
+<!-- -->→ Agent reasons about next action<br>
+<!-- -->→ Executes action using available tool<br>
+<!-- -->→ Receives feedback (result or error)<br>
+<!-- -->→ Updates memory<br>
+<!-- -->→ Loops until task complete or stopping condition met</p>
+<p>┌──────────────────────────┐
+│          GOAL            │
+│   (outcome to achieve)   │
+└────────────┬─────────────┘
+│
+┌────────────▼─────────────┐
+┌──▶ │          REASON          │
+│    │   what should I do next? │
+│    └────────────┬─────────────┘
+│                 │
+│    ┌────────────▼─────────────┐
+│    │         USE TOOL         │
+│    │  API / search / generate │
+│    └────────────┬─────────────┘
+│                 │
+│    ┌────────────▼─────────────┐
+│    │        GET RESULT        │
+│    │   success / error / data │
+│    └────────────┬─────────────┘
+│                 │
+│    ┌────────────▼─────────────┐
+│    │      UPDATE MEMORY       │
+└────│   store what happened    │
+loop            └────────────┬─────────────┘
+│
+┌────────┴────────┐
+▼                 ▼
+GOAL MET?           NOT YET?
+STOP               LOOP ↑</p>
+<p>The model provides reasoning. The agent provides execution. Together, they look a lot more like a worker than a search engine.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-principles">Key Principles<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#key-principles" class="hash-link" aria-label="Direct link to Key Principles" title="Direct link to Key Principles" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Think like a manager</strong>&nbsp;— The best agents are designed the same way you'd build a team. Start with the outcome you want, break it into tasks, figure out what tools are needed, then assign those responsibilities to one or more agents. Prompts come much later in the process. The most reliable agent systems are built on clear goals, well-defined tasks, and thoughtful orchestration — not clever prompting.</li>
+<li class=""><strong>Memory is not automatic</strong> — LLMs are stateless by default. Every piece of context an agent needs — past actions, API results, error states — has to be explicitly managed and passed back in. You don't get this for free.</li>
+<li class=""><strong>Tools define what's possible</strong> — An agent can only act within the boundaries of its tools. Well-scoped tools create predictable behavior. Vague or overloaded tools create confusion and drift.</li>
+<li class=""><strong>Specialize before you scale</strong> — One agent trying to do everything produces inconsistent results. Multiple focused agents, each with a clear role, are easier to debug, easier to improve, and more reliable in practice.</li>
+<li class=""><strong>Guardrails are part of the design</strong> — Reliability doesn't come from a smarter model. It comes from constraints, validation, loop limits, and clearly defined boundaries built in from the start.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="core-concepts">Core Concepts<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#core-concepts" class="hash-link" aria-label="Direct link to Core Concepts" title="Direct link to Core Concepts" translate="no">​</a></h2>
+<table><thead><tr><th>Concept</th><th>Summary</th></tr></thead><tbody><tr><td>Agentic AI</td><td>AI systems that act autonomously — making decisions, taking actions, and adapting based on feedback — rather than just responding to a single prompt.</td></tr><tr><td>Agent Loop</td><td>The core execution cycle: decide → act → receive feedback → update context → repeat. The quality of this loop often matters more than the sophistication of the model.</td></tr><tr><td>Short-term Memory</td><td>Context held within a single task run — conversation history and action results passed in each prompt. Gone when the session ends.</td></tr><tr><td>Long-term Memory</td><td>Persisted knowledge stored externally and retrieved across sessions — useful for learning from past tasks or maintaining continuity across users and entities.</td></tr><tr><td>Entity Memory</td><td>A specialised memory type that tracks specific named things — companies, people, modules — across interactions.</td></tr><tr><td>Function Calling</td><td>A structured API capability where the LLM outputs a tool name and arguments as JSON rather than free text. More reliable, simpler to parse, and foundational for enterprise agents.</td></tr><tr><td>GAIL Framework</td><td>A design model for agents: <strong>G</strong>oals/Instructions, <strong>A</strong>ctions, <strong>I</strong>nformation, <strong>L</strong>anguage. Covers what the agent should do, what it can use, what it knows, and how it should respond.</td></tr><tr><td>Guardrails</td><td>Rules and constraints that prevent infinite loops, reduce hallucinations, and keep the agent within scope.</td></tr><tr><td>Multi-agent System</td><td>An architecture where multiple specialised agents collaborate — dividing tasks, passing outputs, and combining results — rather than one agent attempting everything.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="frameworks--components">Frameworks / Components<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#frameworks--components" class="hash-link" aria-label="Direct link to Frameworks / Components" title="Direct link to Frameworks / Components" translate="no">​</a></h2>
+<p>The framework that clicked for me was thinking about agents the same way I think about building teams. Every effective team needs a clear goal, defined responsibilities, the right tools, and feedback loops. Agent design follows the same logic.</p>
+<table><thead><tr><th>Item</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Goals / Instructions</strong> (GAIL – G)</td><td>Defines the agent's persona, objective, and process rules. Without this, the agent has no direction and produces unfocused or incorrect outputs.</td></tr><tr><td><strong>Actions</strong> (GAIL – A)</td><td>Specifies which tools or operations the agent is allowed to use. Without this, the agent may attempt arbitrary or unsafe operations.</td></tr><tr><td><strong>Information</strong> (GAIL – I)</td><td>Dynamic data fed in during task execution — API results, file contents, error messages. The agent can't adapt without this feedback.</td></tr><tr><td><strong>Language</strong> (GAIL – L)</td><td>Output format and communication style instructions. Without this, responses are inconsistent and hard to parse programmatically.</td></tr><tr><td><strong>Agent Loop</strong></td><td>The execution engine: action → feedback → next decision. Without the loop, the agent is just a one-shot prompt with no ability to recover or continue.</td></tr><tr><td><strong>Tool Layer</strong></td><td>The interface between the agent's decisions and real-world systems. Tools need to be fault-tolerant and cached where possible to hold up at scale.</td></tr><tr><td><strong>Memory Layer</strong></td><td>Context management across steps. Short-term memory keeps the task coherent; long-term and entity memory enable continuity across sessions.</td></tr><tr><td><strong>Guardrails</strong></td><td>Constraints that bound agent behaviour — loop limits, input validation, output checks. Without these, agents can spiral into repeated failed calls or drift off-task.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-world-applications">Real-World Applications<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#real-world-applications" class="hash-link" aria-label="Direct link to Real-World Applications" title="Direct link to Real-World Applications" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>API documentation pipeline (multi-agent)</strong> — The most significant agentic workflow I've built so far. APIs needed to be analysed, grouped, and structured before any documentation could be generated. I wrote Python utilities to parse API JSON files and identify relationships between endpoints in the same module. That structured output became the input for a pipeline of specialised agents — some focused on understanding APIs, others on organising information, others on generating documentation. The result: raw API metadata in, usable documentation assets out — removing hours of manual drafting per module.</li>
+<li class=""><strong>Language review agent</strong> — A single-purpose agent that reviews content for clarity, consistency, readability, and tone. The scope is intentionally narrow. That's exactly what makes the output reliable enough to act on.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="practitioner-notes">Practitioner Notes<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#practitioner-notes" class="hash-link" aria-label="Direct link to Practitioner Notes" title="Direct link to Practitioner Notes" translate="no">​</a></h2>
+<p><em>Distilled from building language review, API parsing, and documentation generation agents.</em></p>
+<ul>
+<li class=""><strong>Most failures are workflow failures, not model failures</strong> — The agent has unclear goals, the inputs are unstructured, the context is incomplete. Fixing any one of those areas consistently produced larger gains than switching models.</li>
+<li class=""><strong>Memory must be explicitly architected, not assumed</strong> — When building the multi-agent documentation pipeline, early versions lost intermediate state between agents. The fix was passing structured outputs explicitly from one agent to the next as part of the prompt context — not relying on any shared memory by default.</li>
+<li class=""><strong>Specialise agents aggressively</strong> — A single agent attempting to parse JSON, structure content, <em>and</em> write prose produced inconsistent output. Splitting into three scoped agents (parser → structurer → writer) improved quality and made debugging far easier.</li>
+<li class=""><strong>Preprocessing dramatically improves performance</strong> — Writing Python to parse API JSON and identify module-level groupings before passing to agents significantly reduced hallucination. Agents perform better when they receive clean, organised information rather than raw source material.</li>
+<li class=""><strong>Guardrails matter most when you are iterating</strong> — During development, agents with no loop limits will happily retry a broken API call indefinitely. Set a maximum retry count early, even if it feels unnecessary at the prototype stage.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tools-i-use">Tools I Use<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#tools-i-use" class="hash-link" aria-label="Direct link to Tools I Use" title="Direct link to Tools I Use" translate="no">​</a></h2>
+<p><em>Practical tools I use when building and working with agentic workflows.</em></p>
+<ul>
+<li class=""><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" class="">GitHub Copilot</a> — My primary tool for building custom agents. I use it to write and iterate on agent logic, define tool functions, and test prompt structures directly in the editor. The custom agent mode lets you scope behaviour and connect to external tools without leaving the development environment.</li>
+<li class=""><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="">Visual Studio Code</a> — The IDE I work in day-to-day. I use it to build agent scripts in Python, manage DITA and Markdown documentation files, and interact with Copilot during development. Most of my agentic pipelines are written, tested, and iterated on here.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connected-to">Connected To<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#connected-to" class="hash-link" aria-label="Direct link to Connected To" title="Direct link to Connected To" translate="no">​</a></h2>
+<p>Blogs related to this series:</p>
+<ul>
+<li class="">→ <a href="https://ejsumi.github.io/2026/02/14/rag-poc/" target="_blank" rel="noopener noreferrer" class="">RAG from the Inside: What Building It Taught Me About AI-Readable Docs</a></li>
+<li class="">→ <a href="https://ejsumi.github.io/2026/01/10/aiagents/" target="_blank" rel="noopener noreferrer" class="">From Prompts to Agents: A Technical Writer's Guide to GitHub Copilot</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="course-details">Course Details<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#course-details" class="hash-link" aria-label="Direct link to Course Details" title="Direct link to Course Details" translate="no">​</a></h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Course</td><td>Building AI Agents: Automation and NLP Foundations + AI Agents and Agentic AI with Python &amp; Generative AI</td></tr><tr><td>Provider</td><td>Coursera / Vanderbilt University</td></tr><tr><td>Category</td><td>AI / AI Agents &amp; Agentic Workflows</td></tr><tr><td>Certificate</td><td><a href="https://www.coursera.org/account/accomplishments/verify/XRYOLF9CDPP4" target="_blank" rel="noopener noreferrer" class="">Verify – Course 1</a> · <a href="https://www.coursera.org/account/accomplishments/verify/3WGOWCQRZI0V" target="_blank" rel="noopener noreferrer" class="">Verify – Course 2</a></td></tr></tbody></table>
+<hr>]]></content>
+        <category label="Playbook" term="Playbook"/>
+        <category label="Agentic AI" term="Agentic AI"/>
+    </entry>
+</feed>
