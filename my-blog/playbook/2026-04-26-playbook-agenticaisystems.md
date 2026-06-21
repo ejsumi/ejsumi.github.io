@@ -47,6 +47,8 @@ Task (natural language goal)
 → Updates memory  
 → Loops until task complete or stopping condition met
 
+```
+
              MANAGER
                 │
                 ▼
@@ -61,14 +63,14 @@ Task (natural language goal)
       │         │         │
       └────┬────┴────┬────┘
            ▼         ▼
-        Review Results
-           │
-           ▼
-        Update Memory
-           │
-           ↺
+          Review Results
+             │
+             ▼
+          Update Memory
+             │
+             ↺
 
-
+```
 
 
 The model provides reasoning. The agent provides execution. Together, they look a lot more like a worker than a search engine.
