@@ -38,35 +38,26 @@ and what I learned building documentation and language review pipelines with the
 <!-- -->→ Receives feedback (result or error)<br>
 <!-- -->→ Updates memory<br>
 <!-- -->→ Loops until task complete or stopping condition met</p>
-<p>┌──────────────────────────┐
-│          GOAL            │
-│   (outcome to achieve)   │
-└────────────┬─────────────┘
+<p>MANAGER
 │
-┌────────────▼─────────────┐
-┌──▶ │          REASON          │
-│    │   what should I do next? │
-│    └────────────┬─────────────┘
-│                 │
-│    ┌────────────▼─────────────┐
-│    │         USE TOOL         │
-│    │  API / search / generate │
-│    └────────────┬─────────────┘
-│                 │
-│    ┌────────────▼─────────────┐
-│    │        GET RESULT        │
-│    │   success / error / data │
-│    └────────────┬─────────────┘
-│                 │
-│    ┌────────────▼─────────────┐
-│    │      UPDATE MEMORY       │
-└────│   store what happened    │
-loop            └────────────┬─────────────┘
+▼
+🎯 Define Goal
 │
-┌────────┴────────┐
-▼                 ▼
-GOAL MET?           NOT YET?
-STOP               LOOP ↑</p>
+▼
+👷 Agent Worker
+│
+┌─────────┼─────────┐
+▼         ▼         ▼
+Search     Analyze    Generate
+│         │         │
+└────┬────┴────┬────┘
+▼         ▼
+Review Results
+│
+▼
+Update Memory
+│
+↺</p>
 <p>The model provides reasoning. The agent provides execution. Together, they look a lot more like a worker than a search engine.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-principles">Key Principles<a href="https://ejsumi.github.io/playbook/2026/04/26/playbook-agenticaisystems#key-principles" class="hash-link" aria-label="Direct link to Key Principles" title="Direct link to Key Principles" translate="no">​</a></h3>
 <ul>
