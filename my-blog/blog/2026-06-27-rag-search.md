@@ -54,3 +54,5 @@ I used to think AI products were mostly about models, prompts, and retrieval str
 Now I see them as mostly about clarity — of requirements, ownership, and information. 
 The technology simply amplifies the quality of the decisions made before it.
 
+**Related posts:**
+- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](2026/02/14/rag-poc)
