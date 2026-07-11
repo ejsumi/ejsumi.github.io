@@ -2,10 +2,56 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ejsumi.github.io/</id>
     <title>Sumi Elizabeth Joseph Blog</title>
-    <updated>2026-04-26T00:00:00.000Z</updated>
+    <updated>2026-06-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ejsumi.github.io/"/>
     <subtitle>Sumi Elizabeth Joseph Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[AI-Assisted Search: Behind an AI Team and Documentation Team Collaboration]]></title>
+        <id>https://ejsumi.github.io/2026/06/27/rag-search</id>
+        <link href="https://ejsumi.github.io/2026/06/27/rag-search"/>
+        <updated>2026-06-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[An AI-assisted search rollout on a help docs portal — the ownership boundaries, trust requirements, and query-scoping decisions an AI team and a documentation team had to settle before a single query ever ran.]]></summary>
+        <content type="html"><![CDATA[<p>Management wanted AI-assisted search added to the help docs portal — better findability, better user experience, fewer support tickets from people who couldn't find an answer that technically already existed.</p>
+<p>That requirement landed on two teams at once: the AI team, who owned the model and retrieval pipeline, and the documentation team, who owned the content the model would be searching. Neither team could deliver this alone, and that's the part nobody warns you about. The interesting work wasn't in the model. It was in the handful of business decisions both teams had to make together before a single query ever ran.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-decisions-that-had-nothing-to-do-with-the-model">The Decisions That Had Nothing to Do With the Model<a href="https://ejsumi.github.io/2026/06/27/rag-search#the-decisions-that-had-nothing-to-do-with-the-model" class="hash-link" aria-label="Direct link to The Decisions That Had Nothing to Do With the Model" title="Direct link to The Decisions That Had Nothing to Do With the Model" translate="no">​</a></h2>
+<p>Three questions came up before we wrote a line of retrieval logic, and none of them were technical.</p>
+<p><strong>Who owns what?</strong> We drew a line early: the AI team owned the mechanics of search, the documentation team owned the accuracy and structure of what got searched. When an answer was wrong, that line decided whether it was a retrieval bug or a content gap — a distinction we needed before launch, not after a bad answer went out.</p>
+<p><strong>How does the customer trust it?</strong> An answer with no source is just a claim. We decided the assistant would always show the reference docs an answer was curated from — not a citation feature, a trust requirement. Customers needed to verify an AI answer against the real doc, especially the first few times. That's a condition of adoption, not a UX flourish.</p>
+<p><strong>Where is the question coming from?</strong> The same query meant different things depending on where it was triggered. Typed from inside Product A's docs, it implied a different scope than the same words typed into the portal's global search bar. We narrowed results based on that origin point — otherwise the assistant would confidently hand someone a correct-sounding answer sourced from the wrong product entirely.</p>
+<p>None of these three decisions show up in a system architecture diagram. All three determined whether customers would actually trust and use what we shipped.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-hardest-problems-still-werent-technical">The Hardest Problems Still Weren't Technical<a href="https://ejsumi.github.io/2026/06/27/rag-search#the-hardest-problems-still-werent-technical" class="hash-link" aria-label="Direct link to The Hardest Problems Still Weren't Technical" title="Direct link to The Hardest Problems Still Weren't Technical" translate="no">​</a></h2>
+<p>Once the "who owns what" question was settled on paper, the real version of it showed up in practice.</p>
+<p>Connecting a documentation platform to an AI system that had never touched it before meant approvals, access requests, and coordination across teams with no established process and no single obvious owner for the next decision. Progress depended less on model tuning and more on persistence — finding the right people, translating "we need read access to this repo" into terms a non-technical stakeholder would approve, and making sure the work didn't quietly stall in someone's backlog for three weeks.</p>
+<p>This is the part that never makes it into a retrospective slide, but it took more time than any prompt-engineering decision.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reality-check-ai-held-up-a-mirror-to-our-content">Reality Check: AI Held Up a Mirror to Our Content<a href="https://ejsumi.github.io/2026/06/27/rag-search#reality-check-ai-held-up-a-mirror-to-our-content" class="hash-link" aria-label="Direct link to Reality Check: AI Held Up a Mirror to Our Content" title="Direct link to Reality Check: AI Held Up a Mirror to Our Content" translate="no">​</a></h2>
+<p>I expected the assistant to expose gaps in retrieval. It exposed gaps in the documentation instead.</p>
+<p>People connect ideas across documents naturally — they infer relationships, remember past releases, and fill in context that was never explicitly written down.
+The AI doesn't do any of that. It retrieves only what exists on the page.</p>
+<p>So at times, the answers were incomplete or missing the context a human reader would have supplied automatically.
+The AI wasn't creating a new problem. It was surfacing one the documentation already had.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-changed-wasnt-just-the-feature">What Changed Wasn't Just the Feature<a href="https://ejsumi.github.io/2026/06/27/rag-search#what-changed-wasnt-just-the-feature" class="hash-link" aria-label="Direct link to What Changed Wasn't Just the Feature" title="Direct link to What Changed Wasn't Just the Feature" translate="no">​</a></h2>
+<p>The obvious outcome was better search. The less obvious outcome was a different approach to writing documentation in the future.</p>
+<p>Rather than trying to rewrite everything that already existed, we changed how new content would be created.
+The focus shifted toward making information understandable on its own, using consistent terminology, providing explicit context, and reducing assumptions about what readers already know.
+Those practices help a retrieval system. They help human readers more.</p>
+<p>The project started as an AI initiative. It became a content quality initiative.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-this-experience-taught-me">What This Experience Taught Me<a href="https://ejsumi.github.io/2026/06/27/rag-search#what-this-experience-taught-me" class="hash-link" aria-label="Direct link to What This Experience Taught Me" title="Direct link to What This Experience Taught Me" translate="no">​</a></h3>
+<p>Three ideas from this project will carry into future ones:</p>
+<ul>
+<li class="">product decisions happen long before implementation</li>
+<li class="">ownership means reducing ambiguity rather than just solving technical problems</li>
+<li class="">the product is always bigger than the software — documentation, governance, and user expectations shape it as much as the technology does.</li>
+</ul>
+<p>I used to think AI products were mostly about models, prompts, and retrieval strategies.
+Now I see them as mostly about clarity — of requirements, ownership, and information.
+The technology simply amplifies the quality of the decisions made before it.</p>]]></content>
+        <category label="RAG" term="RAG"/>
+        <category label="AI Search" term="AI Search"/>
+        <category label="Documentation" term="Documentation"/>
+        <category label="Cross-Team Collaboration" term="Cross-Team Collaboration"/>
+        <category label="Enterprise Platform" term="Enterprise Platform"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How Unstructured Intent Becomes Confidently Wrong Answers]]></title>
         <id>https://ejsumi.github.io/2026/04/26/contextcurators</id>
