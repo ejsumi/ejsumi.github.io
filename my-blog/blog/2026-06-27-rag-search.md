@@ -56,4 +56,4 @@ The technology simply amplifies the quality of the decisions made before it.
 
 **Related posts:**
 
-- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](2026/02/14/rag-poc) - my learnings on doing a RAG POC with langchain
+- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](/2026/02/14/rag-poc) - my learnings on doing a RAG POC with langchain

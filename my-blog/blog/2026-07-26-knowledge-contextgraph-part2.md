@@ -399,9 +399,9 @@ That is the practical test for me.
 
 ## Related posts
 
-- [Part 1: What AI Can Infer About Your Product — And Why Your Docs Shape That Picture](2026/07/26/knowledge-contextgraph-part1)
-- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](2026/02/14/rag-poc)
-- [My Daily Workflow with Enterprise Copilot: A Technical Writer's Field Notes](2025/10/02/copilitusage)
+- [Part 1: What AI Can Infer About Your Product — And Why Your Docs Shape That Picture](/2026/07/18/knowledge-contextgraph-part1)
+- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](/2026/02/14/rag-poc)
+- [My Daily Workflow with Enterprise Copilot: A Technical Writer's Field Notes](/2025/10/02/copilitusage)
 
 ## Tags
 

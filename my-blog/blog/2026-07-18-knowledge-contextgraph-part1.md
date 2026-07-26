@@ -158,8 +158,8 @@ Next, I'm looking at four practical moves: terminology governance, relationship-
 
 ## Related posts
 
-- [Part 2: Making Documentation AI-Ready — Practical Moves for Technical Writers](2026/07/26/knowledge-contextgraph-part2)
-- [My Daily Workflow with Enterprise Copilot: A Technical Writer's Field Notes](2025/10/02/copilitusage)
-- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](2026/02/14/rag-poc)
+- [Part 2: Making Documentation AI-Ready — Practical Moves for Technical Writers](/2026/07/26/knowledge-contextgraph-part2)
+- [My Daily Workflow with Enterprise Copilot: A Technical Writer's Field Notes](/2025/10/02/copilitusage)
+- [RAG from the Inside: What Building It Taught Me About AI-Readable Docs](/2026/02/14/rag-poc)
 
 
