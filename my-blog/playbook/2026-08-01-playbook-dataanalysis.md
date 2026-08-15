@@ -236,7 +236,7 @@ Blogs related to this series:
 - → [Numpy: A Quick Reference](/2025/08/15/numpy)
 - → [Pandas GroupBy in Practice](/2025/09/13/pandas-groupby)
 
-This playbook covers understanding data. Once the data is clean and the question is about predicting an outcome rather than summarizing one, that's where [Playbook: Supervised Machine Learning in Practice](/playbook/supervised-machine-learning-in-practice) takes over.
+This playbook covers understanding data. Once the data is clean and the question is about predicting an outcome rather than summarizing one, that's where [Playbook: Supervised Machine Learning in Practice]() takes over.
 
 ---
 
