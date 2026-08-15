@@ -47,7 +47,7 @@ Raw data (CSV, export, log)
 → Sort and rank
 → Report the number that answers the original question
 
-![Data-analysis workflow](https://github.com/ejsumi/ejsumi.github.io/blob/main/my-blog/static/img/dataAnalysis_flow.png)
+![Data-analysis workflow](/img/dataAnalysis_flow.png)
 
 The tools provide the mechanics. The question you're answering provides the direction. Skip the question and you get a technically correct table that answers nothing.
 
