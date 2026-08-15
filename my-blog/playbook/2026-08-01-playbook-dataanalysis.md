@@ -47,19 +47,7 @@ Raw data (CSV, export, log)
 → Sort and rank
 → Report the number that answers the original question
 
-```mermaid
-flowchart TD
-    A[Raw Data] --> B["🔍 Inspect & Understand"]
-    B --> C["🧹 Clean & Validate"]
-    C --> D[Filter]
-    C --> E[Select]
-    C --> F[Derive]
-    D --> G[Group & Aggregate]
-    E --> G
-    F --> G
-    G --> H[Sort & Rank]
-    H --> I[Report the Answer]
-```
+![Data-analysis workflow](/img/dataAnalysis_flow.png)
 
 The tools provide the mechanics. The question you're answering provides the direction. Skip the question and you get a technically correct table that answers nothing.
 
